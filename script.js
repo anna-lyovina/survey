@@ -1395,7 +1395,22 @@ document.addEventListener("DOMContentLoaded", () => {
         return result[0]
     }
 
-    copyButton.addEventListener("click", () => {
+    async function getUID() {
+        try {
+            const fjs = await loadFJS();
+            const fp = await fjs.load();
+            const result = await fp.get();
+
+            return result.visitorId;
+        } catch (error) {
+            return null;
+        }
+    
+        return null;
+    }
+
+    function processCopyButtonClick()
+    {
         // Create a temporary string to hold the questions and answers
         let resultString = "";
 
@@ -1437,21 +1452,38 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
 
-        // Copy resultString to the clipboard
-        if (resultString.trim())
-        {
-            navigator.clipboard.writeText(resultString)
-            .then(() => {
-                showInfo("Вашим ответам создана резервная копия");
-            })
-            .catch((err) => {
+        
+        (async () => {
+            copyButton.removeEventListener("click", processCopyButtonClick);
+
+            const uid = await getUID();
+            let successful = false;
+
+            if (uid)
+            {
+                const filename = `res/bkp/${uid}`;
+                if (resultString)
+                {
+                    await saveRecord(filename, resultString);
+                    const test = await loadRecord(filename);
+                    if (test === resultString)
+                    {
+                        successful = true;
+                        showInfo("Вашим ответам создана резервная копия");
+                    }
+                }
+            }
+
+            if (!successful)
+            {
                 showError("Невозможно создать резервную копию ответов")
-            });
-        }
-        else{
-            showError("Ответов для создания резервной копии не обнаружено")
-        }
-    });
+            }
+
+            copyButton.addEventListener("click", processCopyButtonClick);
+        })();
+    }
+
+    copyButton.addEventListener("click", processCopyButtonClick);
 
     function fillFromText(resultString) {
         // Split the result string into individual lines
@@ -1545,24 +1577,40 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
     
-    
-    pasteButton.addEventListener("click", async () => {
-        try {
-            const clipboardText = await navigator.clipboard.readText();
-            if (clipboardText.trim()) {
-                try {
-                    fillFromText(clipboardText.trim());
-                    showInfo("Резервная копия была успешно использована");
-                } catch (error) {
-                    showError("Резервная копия не может быть использована");
-                }                
-            } else {
-                showError("Резервной копии не обнаружено");
+    function processPasteButtonClick()
+    {
+        (async () => {
+            pasteButton.removeEventListener("click", processPasteButtonClick);
+
+            const uid = await getUID();
+            let successful = false;
+
+            if (uid)
+            {
+                const filename = `res/bkp/${uid}`;
+                const resultString = await loadRecord(filename);
+                if (resultString)
+                {
+                    try {
+                        fillFromText(resultString.trim());
+                        showInfo("Резервная копия была успешно использована");
+                        successful = true;
+                    } catch (error) {
+                        showError("Резервная копия не может быть использована");
+                    } 
+                } 
             }
-        } catch (err) {
-            showError("Резервная копия недоступна");
-        }
-    });
+
+            if (!successful)
+            {
+                showError("Резервная копия недоступна")
+            }
+
+            pasteButton.addEventListener("click", processPasteButtonClick);
+        })();
+    }
+    
+    pasteButton.addEventListener("click", processPasteButtonClick);
 
     
 
