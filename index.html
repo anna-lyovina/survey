@@ -1,0 +1,1961 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Опрос - Анна Лёвина</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <p>Опрос - Анна Лёвина</p>
+        <nav id = "headerNav" style="display: none;">
+            <ul class="menu">
+                <li ><a href="#survey1"> ОАР</a></li>
+                <li><a href="#survey2"> ПЭК</a></li>
+                <li><a href="#survey5"> ОСЖК-К</a></li>
+                <li><a href="#survey3"> ОДП</a></li>
+                <li><a href="#survey4"> DASS‑21</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Добрый день!</h2>
+            <div>
+                <p>Меня зовут Анна, я – клинический психолог и пишу магистерскую диссертацию, посвященную изучению феноменов экзистенциального кризиса и мистического опыта.</p>
+            
+                <p>Приглашаю Вас принять участие в этом интересном исследовании.</p>
+            
+                <p>
+                    Если вы когда-либо задумывались о глубинных вопросах жизни, о смысле существования или, возможно, сталкивались с необычными, труднообъяснимыми переживаниями – эта тема может быть вам близка.
+                </p>
+            
+                <p>
+                    <i>Почему Ваше участие важно?</i> Ваши ответы помогут мне и всему психологическому сообществу лучше понять, как люди справляются с экзистенциальными кризисами, когда за их плечами стоит опыт, выходящий за рамки обычного.
+                </p>
+            
+                <p><i>Что вас ждет?</i></p>
+                <ul>
+                    <li>5 тестов с интересными вопросами о вашем опыте и восприятии себя.</li>
+                    <li>После прохождения каждого из тестов вы сразу сможете увидеть результаты и лучше понять свои собственные переживания.</li>
+                </ul>
+            
+                <p>Опрос является полностью анонимным. Собранные данные в рамках исследования будут представлены в статистически преобразованном виде.</p>
+            
+                <p>
+                    По всем возникающим вопросам Вы можете связаться со мной в WhatsApp: 
+                    <a href="https://wa.me/77772451227" target="_blank">+77772451227</a> (<i>Анна Лёвина</i>).
+                </p>
+            
+                <p>
+                    Это интересно, просто и не займет много времени (<i>35-45 минут</i>), а я буду бесконечно благодарна каждому из вас за участие и вклад в науку!
+                </p>
+            </div>
+            </section>
+
+        <section id="form">
+            <h1>Анкета</h1>
+            <p>Анкетные данные не разглашаются, и в исследовании они будут представлены в закодированном виде.</p>
+            <form id="user-form">
+                <div class="question-group">
+                    <label>Имя и фамилия (или псевдоним):<input id = "userName" type="text" name="name" required>
+                    </label>
+                </div>
+                <div class="question-group" id = "userGender">
+                    <p>Пол:</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="gender" value="female" required> Женщина</label>
+                        <label><input type="radio" name="gender" value="male"> Мужчина</label>
+                    </div>
+                </div>
+                <div class="question-group" id = "userAge">
+                    <p>Возраст:</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="age" value="18-24" required> 18–24</label>
+                        <label><input type="radio" name="age" value="25-34"> 25–34</label>
+                        <label><input type="radio" name="age" value="35-44"> 35–44</label>
+                        <label><input type="radio" name="age" value="45-54"> 45–54</label>
+                        <label><input type="radio" name="age" value="55+"> старше 55</label>
+                    </div>
+                </div>
+                <div class="question-group" id = "userFamilyStatus">
+                    <p>Ваше семейное положение:</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="marital-status" value="single" required> Холост/не замужем</label>
+                        <label><input type="radio" name="marital-status" value="married"> Женат/замужем</label>
+                        <label><input type="radio" name="marital-status" value="divorced"> Разведен (-а)</label>
+                        <label><input type="radio" name="marital-status" value="widowed"> Вдовец/вдова</label>
+                        <label><input type="radio" name="marital-status" value="civil-partnership"> Гражданский брак</label>
+                    </div>
+                </div>
+                
+                <div class="question-group" id = "userEducation">
+                    <p>Образование:</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="education" value="school" required> Среднее (только школа)</label>
+                        <label><input type="radio" name="education" value="college"> Среднее профессиональное (колледж, техникум, училище и т.п.)</label>
+                        <label><input type="radio" name="education" value="bachelor"> Высшее (бакалавриат)</label>
+                        <label><input type="radio" name="education" value="higher"> Высшее (специалитет, магистратура или выше)</label>
+                        <label><input type="radio" name="education" value="none"> Нет образования</label>
+                    </div>
+                </div>
+                
+                <div class="question-group">
+                    <p>Род деятельности (можно выбрать несколько вариантов):</p>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="occupation" value="work"> Работаю</label>
+                        <label><input type="checkbox" name="occupation" value="study"> Учусь</label>
+                        <label><input type="checkbox" name="occupation" value="retired"> На пенсии</label>
+                        <label><input type="checkbox" name="occupation" value="unemployed"> Временно не работаю</label>
+                        <label><input type="checkbox" name="occupation" value="family"> Занимаюсь семьей и домом</label>
+                        <label><input type="checkbox" name="occupation" value="business"> Свой бизнес</label>
+                    </div>
+                </div>
+                
+                <div class="question-group">
+                    <p>Сфера деятельности (можно выбрать несколько вариантов):</p>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="field" value="sales"> Продажи</label>
+                        <label><input type="checkbox" name="field" value="healthcare"> Здравоохранение</label>
+                        <label><input type="checkbox" name="field" value="finance"> Экономика/финансы</label>
+                        <label><input type="checkbox" name="field" value="business"> Бизнес</label>
+                        <label><input type="checkbox" name="field" value="technology"> Технологии</label>
+                        <label><input type="checkbox" name="field" value="manufacturing"> Производство</label>
+                        <label><input type="checkbox" name="field" value="it"> IT</label>
+                        <label><input type="checkbox" name="field" value="psychology"> Психология</label>
+                        <label><input type="checkbox" name="field" value="law"> Юриспруденция</label>
+                        <label><input type="checkbox" name="field" value="tourism"> Туризм</label>
+                        <label><input type="checkbox" name="field" value="science"> Наука</label>
+                        <label><input type="checkbox" name="field" value="education"> Образование</label>
+                        <label><input type="checkbox" name="field" value="esoterics"> Эзотерика</label>
+                        <label><input type="checkbox" name="field" value="other"> Другое</label>
+                        <input id = "userOtherProfessionField" type="text" name="field-other" placeholder="Укажите свое">
+                    </div>
+                </div>
+                
+                <div class="question-group" id = "userSatisfaction">
+                    <p>Удовлетворены ли вы условиями своего проживания и качеством жизни?</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="living-conditions" value="yes" required> Да</label>
+                        <label><input type="radio" name="living-conditions" value="no"> Нет</label>
+                        <label><input type="radio" name="living-conditions" value="unsure"> Затрудняюсь ответить</label>
+                    </div>
+                </div>
+                
+                <div class="question-group" id = "userExistentialCrisis">
+                    <p>Сталкивались ли вы, по вашему мнению, с переживанием *экзистенциального кризиса?</p>
+                    <p style="color: black;"><i>*Пояснение: Экзистенциальный кризис - переломный момент в жизни человека, когда он сталкивается с острым внутренним конфликтом и поисками смысла собственного существования. Случается в разные периоды жизни: подростковый кризис, кризис взросления, кризис середины жизни, кризис старения.</i></p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="existential-crisis" value="yes" required> Да</label>
+                        <label><input type="radio" name="existential-crisis" value="no"> Нет</label>
+                        <label><input type="radio" name="existential-crisis" value="unsure"> Затрудняюсь ответить</label>
+                    </div>
+                </div>
+                
+                <div class="question-group" id = "userSpiritualExperience">
+                    <p>Сталкивались ли вы, по вашему мнению, с переживанием *мистического / духовного опыта?</p>
+                    <p style="color: black;"><i>*Пояснение: Мистический/духовный опыт -   очень яркое сверхъестественное переживание, которое сильно отличается от обычных повседневных переживаний. Примеры: встреча с высшей реальностью, переживание бога, чувство присутствия безграничной тайны в жизни человека, ощущение зависимости от божественной силы или от невидимого порядка вещей, присутствие неких высших сил, понимание высшего знания, вспышка озарения, ощущение общности со всем миром, растворение границ тела и т.п.</i></p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="spiritual-experience" value="yes" required> Да</label>
+                        <label><input type="radio" name="spiritual-experience" value="no"> Нет</label>
+                        <label><input type="radio" name="spiritual-experience" value="unsure"> Затрудняюсь ответить</label>
+                    </div>
+                </div>
+                
+                <div class="question-group">
+                    <p>Какого рода мистический опыт вы, по вашему мнению, переживали? (можно выбрать несколько вариантов)</p>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="mystical-experience" value="none"> Не переживал</label>
+                        <label><input type="checkbox" name="mystical-experience" value="religious-ecstasy"> Религиозный экстаз</label>
+                        <label><input type="checkbox" name="mystical-experience" value="lucid-dreaming"> Осознанные сновидения</label>
+                        <label><input type="checkbox" name="mystical-experience" value="nde"> Опыт клинической смерти</label>
+                        <label><input type="checkbox" name="mystical-experience" value="shamanic-trance"> Шаманский транс</label>
+                        <label><input type="checkbox" name="mystical-experience" value="psychoactive-substances"> Прием психоактивных веществ</label>
+                        <label><input type="checkbox" name="mystical-experience" value="holotropic-breathing"> Холотропное дыхание</label>
+                        <label><input type="checkbox" name="mystical-experience" value="mountain-sickness"> Горная болезнь</label>
+                        <label><input type="checkbox" name="mystical-experience" value="meditation"> Медитация</label>
+                        <label><input type="checkbox" name="mystical-experience" value="nail-standing"> Гвоздестояние</label>
+                        <label><input type="checkbox" name="mystical-experience" value="spontaneous"> Спонтанный</label>
+                        <label><input type="checkbox" name="mystical-experience" value="other"> Переживал, но ни один из вариантов не подходит</label>
+                    </div>
+                </div>
+                
+                <div class="question-group">
+                    <label>Ваш e-mail или телефон по желанию:<input id = "userContact" type="text" name="contact">
+                    </label>
+                </div>                
+            </form>
+
+            <button type="button" class="compute-btn">Начать!</button>
+        </section>
+
+        <section id="survey1">
+            <h2>Опросник акцентуированных радикалов</h2>
+            <p>Внимательно прочитайте утверждения и ответьте в зависимости от того, как они соотносятся с Вами.</p>
+            <form>
+                
+            <div class="question-group">
+                <p>Я охотно допускаю людей в свой внутренний мир.</p>
+                <div class="radio-group">
+                    <label><input type="radio" name="q1" value="1" required> Да</label>
+                    <label><input type="radio" name="q1" value="0"> Нет</label>
+                </div>
+            </div>
+            
+            <div class="question-group">
+                <p>У меня нет причин не доверять людям.</p>
+                <div class="radio-group">
+                    <label><input type="radio" name="q2" value="1" required> Да</label>
+                    <label><input type="radio" name="q2" value="0"> Нет</label>
+                </div>
+            </div>
+            
+            <div class="question-group">
+                <p>Я быстро и легко принимаю решения.</p>
+                <div class="radio-group">
+                    <label><input type="radio" name="q3" value="1" required> Да</label>
+                    <label><input type="radio" name="q3" value="0"> Нет</label>
+                </div>
+            </div>
+            
+            <div class="question-group">
+                <p>В необходимых случаях я умею быть жестким и напористым.</p>
+                <div class="radio-group">
+                    <label><input type="radio" name="q4" value="1" required> Да</label>
+                    <label><input type="radio" name="q4" value="0"> Нет</label>
+                </div>
+            </div>
+            
+            <div class="question-group">
+                <p>Я редко бываю серьезным и мрачным.</p>
+                <div class="radio-group">
+                    <label><input type="radio" name="q5" value="1" required> Да</label>
+                    <label><input type="radio" name="q5" value="0"> Нет</label>
+                </div>
+            </div>
+            
+            <div class="question-group">
+                <p>Обычно у меня приподнятое и оживленное настроение.</p>
+                <div class="radio-group">
+                    <label><input type="radio" name="q6" value="1" required> Да</label>
+                    <label><input type="radio" name="q6" value="0"> Нет</label>
+                </div>
+            </div>
+            
+            <div class="question-group">
+                <p>Я устаю не быстрее, чем другие люди.</p>
+                <div class="radio-group">
+                    <label><input type="radio" name="q7" value="1" required> Да</label>
+                    <label><input type="radio" name="q7" value="0"> Нет</label>
+                </div>
+            </div>
+            
+            <div class="question-group">
+                <p>Я люблю, когда мной восхищаются.</p>
+                <div class="radio-group">
+                    <label><input type="radio" name="q8" value="1" required> Да</label>
+                    <label><input type="radio" name="q8" value="0"> Нет</label>
+                </div>
+            </div>
+            
+            <div class="question-group">
+                <p>Чувства, эмоции других людей действуют на меня незначительно.</p>
+                <div class="radio-group">
+                    <label><input type="radio" name="q9" value="1" required> Да</label>
+                    <label><input type="radio" name="q9" value="0"> Нет</label>
+                </div>
+            </div>
+            
+            <div class="question-group">
+                <p>Уверен, что другие люди часто настроены против меня.</p>
+                <div class="radio-group">
+                    <label><input type="radio" name="q10" value="1" required> Да</label>
+                    <label><input type="radio" name="q10" value="0"> Нет</label>
+                </div>
+            </div>
+            
+            <div class="question-group">
+                <p>Я очень осторожный и предусмотрительный человек.</p>
+                <div class="radio-group">
+                    <label><input type="radio" name="q11" value="1" required> Да</label>
+                    <label><input type="radio" name="q11" value="0"> Нет</label>
+                </div>
+            </div>
+            
+            <div class="question-group">
+                <p>Если кто-то возражает мне или мешает – я быстро поставлю его на место.</p>
+                <div class="radio-group">
+                    <label><input type="radio" name="q12" value="1" required> Да</label>
+                    <label><input type="radio" name="q12" value="0"> Нет</label>
+                </div>
+            </div>
+            
+            <div class="question-group">
+                <p>Я всегда получаю большое удовольствие от своих успехов.</p>
+                <div class="radio-group">
+                    <label><input type="radio" name="q13" value="1" required> Да</label>
+                    <label><input type="radio" name="q13" value="0"> Нет</label>
+                </div>
+            </div>
+            
+            <div class="question-group">
+                <p>Я люблю разнообразные удовольствия и развлечения.</p>
+                <div class="radio-group">
+                    <label><input type="radio" name="q14" value="1" required> Да</label>
+                    <label><input type="radio" name="q14" value="0"> Нет</label>
+                </div>
+            </div>
+            
+            <div class="question-group">
+                <p>Обычно я не опасаюсь сильных физических и психических нагрузок.</p>
+                <div class="radio-group">
+                    <label><input type="radio" name="q15" value="1" required> Да</label>
+                    <label><input type="radio" name="q15" value="0"> Нет</label>
+                </div>
+            </div>
+            
+            <div class="question-group">
+                <p>Я не придаю большого значения внешней привлекательности.</p>
+                <div class="radio-group">
+                    <label><input type="radio" name="q16" value="1" required> Да</label>
+                    <label><input type="radio" name="q16" value="0"> Нет</label>
+                </div>
+            </div>
+            
+            <div class="question-group">
+                <p>Я легко устанавливаю тесные дружеские отношения с другими людьми.</p>
+                <div class="radio-group">
+                    <label><input type="radio" name="q17" value="1" required> Да</label>
+                    <label><input type="radio" name="q17" value="0"> Нет</label>
+                </div>
+            </div>
+            
+            <div class="question-group">
+                <p>Меня достаточно легко переубедить.</p>
+                <div class="radio-group">
+                    <label><input type="radio" name="q18" value="1" required> Да</label>
+                    <label><input type="radio" name="q18" value="0"> Нет</label>
+                </div>
+            </div>
+            
+            <div class="question-group">
+                <p>Перемены в жизни не вызывают у меня беспокойства.</p>
+                <div class="radio-group">
+                    <label><input type="radio" name="q19" value="1" required> Да</label>
+                    <label><input type="radio" name="q19" value="0"> Нет</label>
+                </div>
+            </div>
+            
+            <div class="question-group">
+                <p>Мне жалко слабых и немощных людей и тех, кому не повезло в жизни.</p>
+                <div class="radio-group">
+                    <label><input type="radio" name="q20" value="1" required> Да</label>
+                    <label><input type="radio" name="q20" value="0"> Нет</label>
+                </div>
+            </div>
+            
+            <div class="question-group">
+                <p>Я сурово осуждаю себя за свои ошибки и недостатки.</p>
+                <div class="radio-group">
+                    <label><input type="radio" name="q21" value="1" required> Да</label>
+                    <label><input type="radio" name="q21" value="0"> Нет</label>
+                </div>
+            </div>
+            
+            <div class="question-group">
+                <p>Я не легко сближаюсь с людьми.</p>
+                <div class="radio-group">
+                    <label><input type="radio" name="q22" value="1" required> Да</label>
+                    <label><input type="radio" name="q22" value="0"> Нет</label>
+                </div>
+            </div>
+            
+            <div class="question-group">
+                <p>Я не впечатлительный человек.</p>
+                <div class="radio-group">
+                    <label><input type="radio" name="q23" value="1" required> Да</label>
+                    <label><input type="radio" name="q23" value="0"> Нет</label>
+                </div>
+            </div>
+            
+            <div class="question-group">
+                <p>Я не склонен к яркому и пылкому выражению своих эмоций.</p>
+                <div class="radio-group">
+                    <label><input type="radio" name="q24" value="1" required> Да</label>
+                    <label><input type="radio" name="q24" value="0"> Нет</label>
+                </div>
+            </div>
+            
+            <div class="question-group">
+                <p>Меня мало интересуют мистические и аномальные явления.</p>
+                <div class="radio-group">
+                    <label><input type="radio" name="q25" value="1" required> Да</label>
+                    <label><input type="radio" name="q25" value="0"> Нет</label>
+                </div>
+            </div>
+            
+            <div class="question-group">
+                <p>Я не терплю ущемления своих прав и всегда борюсь за справедливость.</p>
+                <div class="radio-group">
+                    <label><input type="radio" name="q26" value="1" required> Да</label>
+                    <label><input type="radio" name="q26" value="0"> Нет</label>
+                </div>
+            </div>
+            
+            <div class="question-group">
+                <p>Окружающие люди не вызывают у меня смущение и застенчивость.</p>
+                <div class="radio-group">
+                    <label><input type="radio" name="q27" value="1" required> Да</label>
+                    <label><input type="radio" name="q27" value="0"> Нет</label>
+                </div>
+            </div>
+            
+            <div class="question-group">
+                <p>Если мне понадобится, я нарушу и правила, и запреты.</p>
+                <div class="radio-group">
+                    <label><input type="radio" name="q28" value="1" required> Да</label>
+                    <label><input type="radio" name="q28" value="0"> Нет</label>
+                </div>
+            </div>
+            
+            <div class="question-group">
+                <p>Я легко принимаю помощь от других людей.</p>
+                <div class="radio-group">
+                    <label><input type="radio" name="q29" value="1" required> Да</label>
+                    <label><input type="radio" name="q29" value="0"> Нет</label>
+                </div>
+            </div>
+            
+            <div class="question-group">
+                <p>Я склонен задумываться над последствиями своих поступков, прежде чем их совершить.</p>
+                <div class="radio-group">
+                    <label><input type="radio" name="q30" value="1" required> Да</label>
+                    <label><input type="radio" name="q30" value="0"> Нет</label>
+                </div>
+            </div>
+            
+            <div class="question-group">
+                <p>Не люблю громких звуков, яркого света и других сильных раздражителей.</p>
+                <div class="radio-group">
+                    <label><input type="radio" name="q31" value="1" required> Да</label>
+                    <label><input type="radio" name="q31" value="0"> Нет</label>
+                </div>
+            </div>
+            
+            <div class="question-group">
+                <p>В своих рассказах я редко преувеличиваю и приукрашиваю то, что было.</p>
+                <div class="radio-group">
+                    <label><input type="radio" name="q32" value="1" required> Да</label>
+                    <label><input type="radio" name="q32" value="0"> Нет</label>
+                </div>
+            </div>
+            
+            <div class="question-group">
+                <p>Мне нравится совершать странные, непонятные для других поступки.</p>
+                <div class="radio-group">
+                    <label><input type="radio" name="q33" value="1" required> Да</label>
+                    <label><input type="radio" name="q33" value="0"> Нет</label>
+                </div>
+            </div>
+            
+            <div class="question-group">
+                <p>Я не понимаю людей, которые верят, что человек может быть либо хорошим, либо плохим.</p>
+                <div class="radio-group">
+                    <label><input type="radio" name="q34" value="1" required> Да</label>
+                    <label><input type="radio" name="q34" value="0"> Нет</label>
+                </div>
+            </div>
+            
+            <div class="question-group">
+                <p>Свои дела я люблю делать аккуратно и тщательно, вникая в самые мелкие детали.</p>
+                <div class="radio-group">
+                    <label><input type="radio" name="q35" value="1" required> Да</label>
+                    <label><input type="radio" name="q35" value="0"> Нет</label>
+                </div>
+            </div>
+            
+            <div class="question-group">
+                <p>Я достаточно спокойно реагирую, когда другие люди в чем-то превосходят меня.</p>
+                <div class="radio-group">
+                    <label><input type="radio" name="q36" value="1" required> Да</label>
+                    <label><input type="radio" name="q36" value="0"> Нет</label>
+                </div>
+            </div>
+            
+            <div class="question-group">
+                <p>Довольно часто я теряю веру в самого себя.</p>
+                <div class="radio-group">
+                    <label><input type="radio" name="q37" value="1" required> Да</label>
+                    <label><input type="radio" name="q37" value="0"> Нет</label>
+                </div>
+            </div>
+            
+            <div class="question-group">
+                <p>Я редко не выполняю свои обещания.</p>
+                <div class="radio-group">
+                    <label><input type="radio" name="q38" value="1" required> Да</label>
+                    <label><input type="radio" name="q38" value="0"> Нет</label>
+                </div>
+            </div>
+            
+            <div class="question-group">
+                <p>У меня редко бывают физические недомогания (сердцебиение, потливость, тошнота и другие).</p>
+                <div class="radio-group">
+                    <label><input type="radio" name="q39" value="1" required> Да</label>
+                    <label><input type="radio" name="q39" value="0"> Нет</label>
+                </div>
+            </div>
+            
+            <div class="question-group">
+                <p>Я являюсь важной персоной с высокими запросами.</p>
+                <div class="radio-group">
+                    <label><input type="radio" name="q40" value="1" required> Да</label>
+                    <label><input type="radio" name="q40" value="0"> Нет</label>
+                </div>
+            </div>
+            
+            <div class="question-group">
+                <p>Я довольно равнодушно отношусь к сексу.</p>
+                <div class="radio-group">
+                    <label><input type="radio" name="q41" value="1" required> Да</label>
+                    <label><input type="radio" name="q41" value="0"> Нет</label>
+                </div>
+            </div>
+            
+            <div class="question-group">
+                <p>Многие с виду случайные события происходят в результате злого умысла.</p>
+                <div class="radio-group">
+                    <label><input type="radio" name="q42" value="1" required> Да</label>
+                    <label><input type="radio" name="q42" value="0"> Нет</label>
+                </div>
+            </div>
+            
+            <div class="question-group">
+                <p>Я стремлюсь все делать как можно лучше, и из-за этого возникают затяжки.</p>
+                <div class="radio-group">
+                    <label><input type="radio" name="q43" value="1" required> Да</label>
+                    <label><input type="radio" name="q43" value="0"> Нет</label>
+                </div>
+            </div>
+            
+            <div class="question-group">
+                <p>Я презираю тех, кто не умеет бороться за свои интересы.</p>
+                <div class="radio-group">
+                    <label><input type="radio" name="q44" value="1" required> Да</label>
+                    <label><input type="radio" name="q44" value="0"> Нет</label>
+                </div>
+            </div>
+            
+            <div class="question-group">
+                <p>Думая о будущем, я редко представляю худшие варианты развития событий.</p>
+                <div class="radio-group">
+                    <label><input type="radio" name="q45" value="1" required> Да</label>
+                    <label><input type="radio" name="q45" value="0"> Нет</label>
+                </div>
+            </div>
+            
+            <div class="question-group">
+                <p>Я предпочитаю представлять будущее в розовом цвете.</p>
+                <div class="radio-group">
+                    <label><input type="radio" name="q46" value="1" required> Да</label>
+                    <label><input type="radio" name="q46" value="0"> Нет</label>
+                </div>
+            </div>
+            
+            <div class="question-group">
+                <p>Я внимательно слежу за состоянием своего здоровья.</p>
+                <div class="radio-group">
+                    <label><input type="radio" name="q47" value="1" required> Да</label>
+                    <label><input type="radio" name="q47" value="0"> Нет</label>
+                </div>
+            </div>
+            
+            <div class="question-group">
+                <p>Я чувствую себя не уютно, если все внимание окружающих обращено на меня.</p>
+                <div class="radio-group">
+                    <label><input type="radio" name="q48" value="1" required> Да</label>
+                    <label><input type="radio" name="q48" value="0"> Нет</label>
+                </div>
+            </div>
+            
+            <div class="question-group">
+                <p>Мне не нравятся профессии, где нужно работать в одиночку.</p>
+                <div class="radio-group">
+                    <label><input type="radio" name="q49" value="1" required> Да</label>
+                    <label><input type="radio" name="q49" value="0"> Нет</label>
+                </div>
+            </div>
+            
+            <div class="question-group">
+                <p>У меня есть основания всегда быть настороже.</p>
+                <div class="radio-group">
+                    <label><input type="radio" name="q50" value="1" required> Да</label>
+                    <label><input type="radio" name="q50" value="0"> Нет</label>
+                </div>
+            </div>
+            
+            <div class="question-group">
+                <p>Мне не нравится люди, которые точно соблюдают правила.</p>
+                <div class="radio-group">
+                    <label><input type="radio" name="q51" value="1" required> Да</label>
+                    <label><input type="radio" name="q51" value="0"> Нет</label>
+                </div>
+            </div>
+            
+            <div class="question-group">
+                <p>У меня никогда не бывает проблем с дисциплиной.</p>
+                <div class="radio-group">
+                    <label><input type="radio" name="q52" value="1" required> Да</label>
+                    <label><input type="radio" name="q52" value="0"> Нет</label>
+                </div>
+            </div>
+            
+            <div class="question-group">
+                <p>Часто я выбираю людей или ситуации, которые приведут меня к разочарованию.</p>
+                <div class="radio-group">
+                    <label><input type="radio" name="q53" value="1" required> Да</label>
+                    <label><input type="radio" name="q53" value="0"> Нет</label>
+                </div>
+            </div>
+            
+            <div class="question-group">
+                <p>Я никогда не совершаю поступки под влиянием минутного настроения.</p>
+                <div class="radio-group">
+                    <label><input type="radio" name="q54" value="1" required> Да</label>
+                    <label><input type="radio" name="q54" value="0"> Нет</label>
+                </div>
+            </div>
+            
+            <div class="question-group">
+                <p>В незнакомой обстановке я могу растеряться.</p>
+                <div class="radio-group">
+                    <label><input type="radio" name="q55" value="1" required> Да</label>
+                    <label><input type="radio" name="q55" value="0"> Нет</label>
+                </div>
+            </div>
+            
+            <div class="question-group">
+                <p>Я умею хитрить ради достижения своих целей.</p>
+                <div class="radio-group">
+                    <label><input type="radio" name="q56" value="1" required> Да</label>
+                    <label><input type="radio" name="q56" value="0"> Нет</label>
+                </div>
+            </div>
+            
+            <div class="question-group">
+                <p>Я предпочитаю отвлеченные занятия, где нужно мыслить, а не действовать.</p>
+                <div class="radio-group">
+                    <label><input type="radio" name="q57" value="1" required> Да</label>
+                    <label><input type="radio" name="q57" value="0"> Нет</label>
+                </div>
+            </div>
+            
+            <div class="question-group">
+                <p>Мне трудно прощать людей, обидевших, оскорбивших меня или причинивших другой ущерб.</p>
+                <div class="radio-group">
+                    <label><input type="radio" name="q58" value="1" required> Да</label>
+                    <label><input type="radio" name="q58" value="0"> Нет</label>
+                </div>
+            </div>
+            
+            <div class="question-group">
+                <p>Я быстро устаю от длительной монотонной работы.</p>
+                <div class="radio-group">
+                    <label><input type="radio" name="q59" value="1" required> Да</label>
+                    <label><input type="radio" name="q59" value="0"> Нет</label>
+                </div>
+            </div>
+            
+            <div class="question-group">
+                <p>Я редко испытываю раздражение и недовольство.</p>
+                <div class="radio-group">
+                    <label><input type="radio" name="q60" value="1" required> Да</label>
+                    <label><input type="radio" name="q60" value="0"> Нет</label>
+                </div>
+            </div>
+            
+            <div class="question-group">
+                <p>Я никогда не откажусь от возможности получить удовольствие.</p>
+                <div class="radio-group">
+                    <label><input type="radio" name="q61" value="1" required> Да</label>
+                    <label><input type="radio" name="q61" value="0"> Нет</label>
+                </div>
+            </div>
+            
+            <div class="question-group">
+                <p>Я предпочитаю не избегать трудностей.</p>
+                <div class="radio-group">
+                    <label><input type="radio" name="q62" value="1" required> Да</label>
+                    <label><input type="radio" name="q62" value="0"> Нет</label>
+                </div>
+            </div>
+            
+            <div class="question-group">
+                <p>Мои физические недостатки весьма огорчают меня.</p>
+                <div class="radio-group">
+                    <label><input type="radio" name="q63" value="1" required> Да</label>
+                    <label><input type="radio" name="q63" value="0"> Нет</label>
+                </div>
+            </div>
+            
+            <div class="question-group">
+                <p>Когда необходимо, я умею произвести хорошее впечатление на людей.</p>
+                <div class="radio-group">
+                    <label><input type="radio" name="q64" value="1" required> Да</label>
+                    <label><input type="radio" name="q64" value="0"> Нет</label>
+                </div>
+            </div>
+            
+            <div class="question-group">
+                <p>Мои устойчивые суеверия помогают мне жить.</p>
+                <div class="radio-group">
+                    <label><input type="radio" name="q65" value="1" required> Да</label>
+                    <label><input type="radio" name="q65" value="0"> Нет</label>
+                </div>
+            </div>
+            
+            <div class="question-group">
+                <p>Я не считаю, что ревность – полезное качество.</p>
+                <div class="radio-group">
+                    <label><input type="radio" name="q66" value="1" required> Да</label>
+                    <label><input type="radio" name="q66" value="0"> Нет</label>
+                </div>
+            </div>
+            
+            <div class="question-group">
+                <p>На людях я излишне контролирую себя и держусь довольно скованно.</p>
+                <div class="radio-group">
+                    <label><input type="radio" name="q67" value="1" required> Да</label>
+                    <label><input type="radio" name="q67" value="0"> Нет</label>
+                </div>
+            </div>
+            
+            <div class="question-group">
+                <p>Я почти всегда чувствую себя правым.</p>
+                <div class="radio-group">
+                    <label><input type="radio" name="q68" value="1" required> Да</label>
+                    <label><input type="radio" name="q68" value="0"> Нет</label>
+                </div>
+            </div>
+            
+            <div class="question-group">
+                <p>Я способен многим пожертвовать ради других людей.</p>
+                <div class="radio-group">
+                    <label><input type="radio" name="q69" value="1" required> Да</label>
+                    <label><input type="radio" name="q69" value="0"> Нет</label>
+                </div>
+            </div>
+            
+            <div class="question-group">
+                <p>Я легко меняю свои решения и не всегда их придерживаюсь.</p>
+                <div class="radio-group">
+                    <label><input type="radio" name="q70" value="1" required> Да</label>
+                    <label><input type="radio" name="q70" value="0"> Нет</label>
+                </div>
+            </div>
+            
+            <div class="question-group">
+                <p>Я не боюсь физической боли.</p>
+                <div class="radio-group">
+                    <label><input type="radio" name="q71" value="1" required> Да</label>
+                    <label><input type="radio" name="q71" value="0"> Нет</label>
+                </div>
+            </div>
+            
+            <div class="question-group">
+                <p>Я люблю, когда мне прислуживают.</p>
+                <div class="radio-group">
+                    <label><input type="radio" name="q72" value="1" required> Да</label>
+                    <label><input type="radio" name="q72" value="0"> Нет</label>
+                </div>
+            </div>
+            
+            <div class="question-group">
+                <p>Я довольно чувствителен к похвале или критике окружающих.</p>
+                <div class="radio-group">
+                    <label><input type="radio" name="q73" value="1" required> Да</label>
+                    <label><input type="radio" name="q73" value="0"> Нет</label>
+                </div>
+            </div>
+            
+            <div class="question-group">
+                <p>Мои увлечения никогда не достигали степени фанатизма.</p>
+                <div class="radio-group">
+                    <label><input type="radio" name="q74" value="1" required> Да</label>
+                    <label><input type="radio" name="q74" value="0"> Нет</label>
+                </div>
+            </div>
+            
+            <div class="question-group">
+                <p>Я всегда испытываю определенные опасения.</p>
+                <div class="radio-group">
+                    <label><input type="radio" name="q75" value="1" required> Да</label>
+                    <label><input type="radio" name="q75" value="0"> Нет</label>
+                </div>
+            </div>
+            
+            <div class="question-group">
+                <p>Я не люблю командовать и мне легче подчиняться.</p>
+                <div class="radio-group">
+                    <label><input type="radio" name="q76" value="1" required> Да</label>
+                    <label><input type="radio" name="q76" value="0"> Нет</label>
+                </div>
+            </div>
+            
+            <div class="question-group">
+                <p>Когда меня отвергают, я чувствую, что заслужил это.</p>
+                <div class="radio-group">
+                    <label><input type="radio" name="q77" value="1" required> Да</label>
+                    <label><input type="radio" name="q77" value="0"> Нет</label>
+                </div>
+            </div>
+            
+            <div class="question-group">
+                <p>Я не люблю строгой дисциплины и нудной, однообразной работы.</p>
+                <div class="radio-group">
+                    <label><input type="radio" name="q78" value="1" required> Да</label>
+                    <label><input type="radio" name="q78" value="0"> Нет</label>
+                </div>
+            </div>
+            
+            <div class="question-group">
+                <p>Я чувствую себя хорошо только в безопасной комфортной обстановке.</p>
+                <div class="radio-group">
+                    <label><input type="radio" name="q79" value="1" required> Да</label>
+                    <label><input type="radio" name="q79" value="0"> Нет</label>
+                </div>
+            </div>
+            
+            <div class="question-group">
+                <p>Из меня не получился бы хороший актер.</p>
+                <div class="radio-group">
+                    <label><input type="radio" name="q80" value="1" required> Да</label>
+                    <label><input type="radio" name="q80" value="0"> Нет</label>
+                </div>
+            </div>
+            
+            <button type="button" class="compute-btn">Показать результаты по этому опроснику</button>
+            </form>
+
+            <!-- Explanatory Text Above Chart -->
+            <div id="chart-info">
+                <h3>Результаты</h3>
+                <p>Этот график отображает выраженность различных радикалов на основе ваших ответов.</p>
+                <p><strong>Легенда:</strong></p>
+                <ul>
+                    <li>Ниже среднего (≤ 3)</li>
+                    <li>Средняя (≥ 4 и ≤ 6)</li>
+                    <li>Выше среднего (≥ 7 и ≤ 8)</li>
+                    <li>Акцентуация (9 или 10)</li>
+                </ul>
+            </div>
+
+            <!-- Chart Container -->
+            <div id="chart-container" class="hidden"></div>
+
+            <!-- Explanatory Text Below Chart -->
+            <div id="chart-summary" class="hidden">
+                <p><strong>Содержательная интерпретация результатов</strong></p>
+                <ul>
+                    <li>
+                        <strong>Шизоидная акцентуация.</strong> Проявляется своеобразной отгороженностью от внешнего мира, с тенденцией ухода от реальности, например, в мистику, религию, науку и т. д. Такая личность предпочитает одиночную работу, часто связанную с мыслительной или интеллектуальной деятельностью. Поведение может внешне выглядеть странным, необычным, чудаковатым, эксцентричным. Круг контактов в целом узкий, состоящий из хорошо знакомых людей. Часто возникают проблемы в установлении и поддержании эмоциональных контактов. Внутренний мир такого человека труднодоступен, он предпочитает находиться в одиночестве.
+                    </li>
+                    <li>
+                        <strong>Паранойяльная акцентуация.</strong> Характерны проявления таких характеристик, как упрямство, недоверчивость, подозрительность, злопамятность. Часто воспринимает мир и окружающих людей в черно-белых красках. Переубедить представителя данного типа достаточно сложно. Для него характерно обостренное чувство справедливости. Все увлечения, как и убеждения, достаточно стойкие. Часто люди с данной акцентуацией – рьяные приверженцы своего дела.
+                    </li>
+                    <li>
+                        <strong>Психастеническая акцентуация.</strong> Основные качества данного типа – тревожность и мнительность. Такой личности сложно принять решение, так как оно должно быть самым правильным. В мышлении и действиях часто наблюдаются тенденции перфекционизма. Недоверие к себе влечет многократные перепроверки результатов действий и прокрастинацию. Тяжело переносят перемены, в малознакомой компании могут выглядеть застенчивыми и нерешительными. Им свойственны также внимание к мелочам и аккуратность.
+                    </li>
+                    <li>
+                        <strong>Эксплозивная акцентуация.</strong> Для этой личности характерны конфликтность, напористость, уверенность в себе. Избыток плохо контролируемой энергии может приводить к нарушению нравственных и социальных норм. При этом возможен поиск снятия напряжения в экстремальных видах спорта и профессиональной деятельности. Отношения с людьми носят конкурентный, соревновательный, иногда конфликтный характер. Им присуще низкое чувство сопереживания другим людям и выраженное стремление бороться за свои интересы.
+                    </li>
+                    <li>
+                        <strong>Гипотимическая (субдепрессивная) акцентуация.</strong> Проявляется пессимистической установкой, чрезмерно серьезным отношением ко всем событиям жизни, недооценкой её радостных и приятных сторон. Это приводит к повышенному чувству вины и тенденции к самокритике. Им свойственны альтруистические тенденции, порой сочетающиеся с пренебрежением собственными интересами.
+                    </li>
+                    <li>
+                        <strong>Гипертимическая акцентуация.</strong> Проявляется избыточным оптимизмом, приподнятым настроением, стремлением к удовольствиям и развлечениям. Характерна сокращенная дистанция по отношению к другим людям, что способствует легким знакомствам. Поведение характеризуется хаотичностью, представитель данного типа легко может поменять свое решение под влиянием настроения. Подобные черты могут сочетаться с тенденцией избегать трудности и ответственности. С трудом переносят строгую дисциплину и однообразную работу.
+                    </li>
+                    <li>
+                        <strong>Астеническая акцентуация.</strong> Характеризуется повышенной утомляемостью, пониженной переносимостью физических и психических нагрузок, повышенной впечатлительностью. Также характерна повышенная чувствительность к различным раздражителям (резкая критика, слишком грубая ткань одежды, физическая боль, резкий запах и др.). Предпочитают комфортный и безопасный образ жизни. Возможны повышенное беспокойство за свое здоровье и самочувствие, с склонностью преувеличивать различные физические симптомы.
+                    </li>
+                    <li>
+                        <strong>Истероидная акцентуация.</strong> Характерно преувеличение своих эмоциональных реакций, выраженное стремление быть в центре внимания, поведение в стиле игры на публику, самолюбование и приукрашивание реальности. Представители данного типа личности предъявляют повышенные требования к окружающим людям, раздражаются, если желаемый эффект не достигнут. Отмечается чувствительность к мнению других людей, при этом характерно стремление манипулировать ими в своих интересах.
+                    </li>
+                </ul>
+            </div>
+        </section>
+        
+
+        <section id="survey2">
+            <h2>Опросник переживания экзистенциального кризиса</h2>
+            <p>Прочитайте внимательно каждое утверждение и оцените степень вашего согласия с ним. Опросник предлагает пять градаций ответов: «полностью согласен», «скорее согласен», «затрудняюсь ответить», «скорее не согласен», «абсолютно не согласен». Выберите, пожалуйста, подходяший Вам ответ.</p>
+            <form>
+                <div class="question-group">
+                    <p>Я не смог оправдать ожиданий моих родителей.</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s2q1" value="2" required> Полностью согласен</label> 
+                        <label><input type="radio" name="s2q1" value="1"> Скорее да</label> 
+                        <label><input type="radio" name="s2q1" value="0"> Затрудняюсь</label> 
+                        <label><input type="radio" name="s2q1" value="-1"> Скорее нет</label> 
+                        <label><input type="radio" name="s2q1" value="-2"> Абсолютно не согласен</label> 
+                    </div>
+                </div>
+                <div class="question-group">
+                    <p>У меня часто бывают такие дни, когда все люди кажутся мне тупыми или порочными.</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s2q2" value="2" required> Полностью согласен</label> 
+                        <label><input type="radio" name="s2q2" value="1"> Скорее да</label> 
+                        <label><input type="radio" name="s2q2" value="0"> Затрудняюсь</label> 
+                        <label><input type="radio" name="s2q2" value="-1"> Скорее нет</label> 
+                        <label><input type="radio" name="s2q2" value="-2"> Абсолютно не согласен</label> 
+                    </div>
+                </div>
+                <div class="question-group">
+                    <p>Я себя презираю</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s2q3" value="2" required> Полностью согласен</label>
+                        <label><input type="radio" name="s2q3" value="1"> Скорее да</label>
+                        <label><input type="radio" name="s2q3" value="0"> Затрудняюсь</label>
+                        <label><input type="radio" name="s2q3" value="-1"> Скорее нет</label>
+                        <label><input type="radio" name="s2q3" value="-2"> Абсолютно не согласен</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <p>Человек склонен радоваться не чужому счастью, а чужому горю</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s2q4" value="2" required> Полностью согласен</label>
+                        <label><input type="radio" name="s2q4" value="1"> Скорее да</label>
+                        <label><input type="radio" name="s2q4" value="0"> Затрудняюсь</label>
+                        <label><input type="radio" name="s2q4" value="-1"> Скорее нет</label>
+                        <label><input type="radio" name="s2q4" value="-2"> Абсолютно не согласен</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <p>Я боюсь толпы и не чувствую своего единения с чужими людьми</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s2q5" value="2" required> Полностью согласен</label>
+                        <label><input type="radio" name="s2q5" value="1"> Скорее да</label>
+                        <label><input type="radio" name="s2q5" value="0"> Затрудняюсь</label>
+                        <label><input type="radio" name="s2q5" value="-1"> Скорее нет</label>
+                        <label><input type="radio" name="s2q5" value="-2"> Абсолютно не согласен</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <p>Все старики одиноки и никому не нужны</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s2q6" value="2" required> Полностью согласен</label>
+                        <label><input type="radio" name="s2q6" value="1"> Скорее да</label>
+                        <label><input type="radio" name="s2q6" value="0"> Затрудняюсь</label>
+                        <label><input type="radio" name="s2q6" value="-1"> Скорее нет</label>
+                        <label><input type="radio" name="s2q6" value="-2"> Абсолютно не согласен</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <p>Я никогда не верил в себя</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s2q7" value="2" required> Полностью согласен</label>
+                        <label><input type="radio" name="s2q7" value="1"> Скорее да</label>
+                        <label><input type="radio" name="s2q7" value="0"> Затрудняюсь</label>
+                        <label><input type="radio" name="s2q7" value="-1"> Скорее нет</label>
+                        <label><input type="radio" name="s2q7" value="-2"> Абсолютно не согласен</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <p>Я постоянно ощущаю чувство вины за все происходящее со мной и с моими близкими</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s2q8" value="2" required> Полностью согласен</label>
+                        <label><input type="radio" name="s2q8" value="1"> Скорее да</label>
+                        <label><input type="radio" name="s2q8" value="0"> Затрудняюсь</label>
+                        <label><input type="radio" name="s2q8" value="-1"> Скорее нет</label>
+                        <label><input type="radio" name="s2q8" value="-2"> Абсолютно не согласен</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <p>Несмотря на большое количество знакомых и друзей, я чувствую себя одиноким</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s2q9" value="2" required> Полностью согласен</label>
+                        <label><input type="radio" name="s2q9" value="1"> Скорее да</label>
+                        <label><input type="radio" name="s2q9" value="0"> Затрудняюсь</label>
+                        <label><input type="radio" name="s2q9" value="-1"> Скорее нет</label>
+                        <label><input type="radio" name="s2q9" value="-2"> Абсолютно не согласен</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <p>Я считаю, что моя личная жизнь сложилась не очень счастливо</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s2q10" value="2" required> Полностью согласен</label>
+                        <label><input type="radio" name="s2q10" value="1"> Скорее да</label>
+                        <label><input type="radio" name="s2q10" value="0"> Затрудняюсь</label>
+                        <label><input type="radio" name="s2q10" value="-1"> Скорее нет</label>
+                        <label><input type="radio" name="s2q10" value="-2"> Абсолютно не согласен</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <p>Ненавижу альтруистов: человек слишком ничтожен даже для того, чтобы помочь самому себе, не говоря уже о других</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s2q11" value="2" required> Полностью согласен</label>
+                        <label><input type="radio" name="s2q11" value="1"> Скорее да</label>
+                        <label><input type="radio" name="s2q11" value="0"> Затрудняюсь</label>
+                        <label><input type="radio" name="s2q11" value="-1"> Скорее нет</label>
+                        <label><input type="radio" name="s2q11" value="-2"> Абсолютно не согласен</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <p>Мне не на кого опереться в этой жизни</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s2q12" value="2" required> Полностью согласен</label>
+                        <label><input type="radio" name="s2q12" value="1"> Скорее да</label>
+                        <label><input type="radio" name="s2q12" value="0"> Затрудняюсь</label>
+                        <label><input type="radio" name="s2q12" value="-1"> Скорее нет</label>
+                        <label><input type="radio" name="s2q12" value="-2"> Абсолютно не согласен</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <p>Я сам виноват в том, что моя жизнь не удалась</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s2q13" value="2" required> Полностью согласен</label>
+                        <label><input type="radio" name="s2q13" value="1"> Скорее да</label>
+                        <label><input type="radio" name="s2q13" value="0"> Затрудняюсь</label>
+                        <label><input type="radio" name="s2q13" value="-1"> Скорее нет</label>
+                        <label><input type="radio" name="s2q13" value="-2"> Абсолютно не согласен</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <p>Я все время ищу способ, который поможет мне забыться и перестать думать о том, что я сделал со своей жизнью</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s2q14" value="2" required> Полностью согласен</label>
+                        <label><input type="radio" name="s2q14" value="1"> Скорее да</label>
+                        <label><input type="radio" name="s2q14" value="0"> Затрудняюсь</label>
+                        <label><input type="radio" name="s2q14" value="-1"> Скорее нет</label>
+                        <label><input type="radio" name="s2q14" value="-2"> Абсолютно не согласен</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <p>Я чувствую себя сексуально непривлекательным</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s2q15" value="2" required> Полностью согласен</label>
+                        <label><input type="radio" name="s2q15" value="1"> Скорее да</label>
+                        <label><input type="radio" name="s2q15" value="0"> Затрудняюсь</label>
+                        <label><input type="radio" name="s2q15" value="-1"> Скорее нет</label>
+                        <label><input type="radio" name="s2q15" value="-2"> Абсолютно не согласен</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <p>Я чувствую, как жизнь уходит из меня по капле</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s2q16" value="2" required> Полностью согласен</label>
+                        <label><input type="radio" name="s2q16" value="1"> Скорее да</label>
+                        <label><input type="radio" name="s2q16" value="0"> Затрудняюсь</label>
+                        <label><input type="radio" name="s2q16" value="-1"> Скорее нет</label>
+                        <label><input type="radio" name="s2q16" value="-2"> Абсолютно не согласен</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <p>Я чувствую себя лишним человеком в своей семье</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s2q17" value="2" required> Полностью согласен</label>
+                        <label><input type="radio" name="s2q17" value="1"> Скорее да</label>
+                        <label><input type="radio" name="s2q17" value="0"> Затрудняюсь</label>
+                        <label><input type="radio" name="s2q17" value="-1"> Скорее нет</label>
+                        <label><input type="radio" name="s2q17" value="-2"> Абсолютно не согласен</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <p>Единственная возможность достойно пройти свой жизненный путь — ни в ком не нуждаться и не рассчитывать на чью-либо помощь и поддержку</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s2q18" value="2" required> Полностью согласен</label>
+                        <label><input type="radio" name="s2q18" value="1"> Скорее да</label>
+                        <label><input type="radio" name="s2q18" value="0"> Затрудняюсь</label>
+                        <label><input type="radio" name="s2q18" value="-1"> Скорее нет</label>
+                        <label><input type="radio" name="s2q18" value="-2"> Абсолютно не согласен</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <p>Я не доволен тем, как сложилась моя жизнь</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s2q19" value="2" required> Полностью согласен</label>
+                        <label><input type="radio" name="s2q19" value="1"> Скорее да</label>
+                        <label><input type="radio" name="s2q19" value="0"> Затрудняюсь</label>
+                        <label><input type="radio" name="s2q19" value="-1"> Скорее нет</label>
+                        <label><input type="radio" name="s2q19" value="-2"> Абсолютно не согласен</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <p>Потери невосполнимы, и если уйдут из моей жизни близкие люди, я останусь совершенно один</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s2q20" value="2" required> Полностью согласен</label>
+                        <label><input type="radio" name="s2q20" value="1"> Скорее да</label>
+                        <label><input type="radio" name="s2q20" value="0"> Затрудняюсь</label>
+                        <label><input type="radio" name="s2q20" value="-1"> Скорее нет</label>
+                        <label><input type="radio" name="s2q20" value="-2"> Абсолютно не согласен</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <p>Семья — это рабство, одиночество — это свобода</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s2q21" value="2" required> Полностью согласен</label>
+                        <label><input type="radio" name="s2q21" value="1"> Скорее да</label>
+                        <label><input type="radio" name="s2q21" value="0"> Затрудняюсь</label>
+                        <label><input type="radio" name="s2q21" value="-1"> Скорее нет</label>
+                        <label><input type="radio" name="s2q21" value="-2"> Абсолютно не согласен</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <p>Я чувствую себя песчинкой, затерянной в мировом океане</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s2q22" value="2" required> Полностью согласен</label>
+                        <label><input type="radio" name="s2q22" value="1"> Скорее да</label>
+                        <label><input type="radio" name="s2q22" value="0"> Затрудняюсь</label>
+                        <label><input type="radio" name="s2q22" value="-1"> Скорее нет</label>
+                        <label><input type="radio" name="s2q22" value="-2"> Абсолютно не согласен</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <p>Моя жизнь совершенно бесцельна</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s2q23" value="2" required> Полностью согласен</label>
+                        <label><input type="radio" name="s2q23" value="1"> Скорее да</label>
+                        <label><input type="radio" name="s2q23" value="0"> Затрудняюсь</label>
+                        <label><input type="radio" name="s2q23" value="-1"> Скорее нет</label>
+                        <label><input type="radio" name="s2q23" value="-2"> Абсолютно не согласен</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <p>Вся моя жизнь — цепь разочарований и утрат</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s2q24" value="2" required> Полностью согласен</label>
+                        <label><input type="radio" name="s2q24" value="1"> Скорее да</label>
+                        <label><input type="radio" name="s2q24" value="0"> Затрудняюсь</label>
+                        <label><input type="radio" name="s2q24" value="-1"> Скорее нет</label>
+                        <label><input type="radio" name="s2q24" value="-2"> Абсолютно не согласен</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <p>Если бы окружающие могли прочитать мои мысли, они пристрелили бы меня как бешеную собаку</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s2q25" value="2" required> Полностью согласен</label>
+                        <label><input type="radio" name="s2q25" value="1"> Скорее да</label>
+                        <label><input type="radio" name="s2q25" value="0"> Затрудняюсь</label>
+                        <label><input type="radio" name="s2q25" value="-1"> Скорее нет</label>
+                        <label><input type="radio" name="s2q25" value="-2"> Абсолютно не согласен</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <p>Жизнь обделила меня гораздо больше, чем других</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s2q26" value="2" required> Полностью согласен</label>
+                        <label><input type="radio" name="s2q26" value="1"> Скорее да</label>
+                        <label><input type="radio" name="s2q26" value="0"> Затрудняюсь</label>
+                        <label><input type="radio" name="s2q26" value="-1"> Скорее нет</label>
+                        <label><input type="radio" name="s2q26" value="-2"> Абсолютно не согласен</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <p>Мои знакомые меня недооценивают</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s2q27" value="2" required> Полностью согласен</label>
+                        <label><input type="radio" name="s2q27" value="1"> Скорее да</label>
+                        <label><input type="radio" name="s2q27" value="0"> Затрудняюсь</label>
+                        <label><input type="radio" name="s2q27" value="-1"> Скорее нет</label>
+                        <label><input type="radio" name="s2q27" value="-2"> Абсолютно не согласен</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <p>Я всегда был и буду неудачником</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s2q28" value="2" required> Полностью согласен</label>
+                        <label><input type="radio" name="s2q28" value="1"> Скорее да</label>
+                        <label><input type="radio" name="s2q28" value="0"> Затрудняюсь</label>
+                        <label><input type="radio" name="s2q28" value="-1"> Скорее нет</label>
+                        <label><input type="radio" name="s2q28" value="-2"> Абсолютно не согласен</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <p>Если я уеду из родного города, меня никто не будет вспоминать с теплыми чувствами</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s2q29" value="2" required> Полностью согласен</label>
+                        <label><input type="radio" name="s2q29" value="1"> Скорее да</label>
+                        <label><input type="radio" name="s2q29" value="0"> Затрудняюсь</label>
+                        <label><input type="radio" name="s2q29" value="-1"> Скорее нет</label>
+                        <label><input type="radio" name="s2q29" value="-2"> Абсолютно не согласен</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <p>Я не хотел бы думать, что после смерти наши поступки будут судить, поскольку это не принесет мне ничего хорошего</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s2q30" value="2" required> Полностью согласен</label>
+                        <label><input type="radio" name="s2q30" value="1"> Скорее да</label>
+                        <label><input type="radio" name="s2q30" value="0"> Затрудняюсь</label>
+                        <label><input type="radio" name="s2q30" value="-1"> Скорее нет</label>
+                        <label><input type="radio" name="s2q30" value="-2"> Абсолютно не согласен</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <p>Таким, как я, нечего надеяться преуспеть в жизни</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s2q31" value="2" required> Полностью согласен</label>
+                        <label><input type="radio" name="s2q31" value="1"> Скорее да</label>
+                        <label><input type="radio" name="s2q31" value="0"> Затрудняюсь</label>
+                        <label><input type="radio" name="s2q31" value="-1"> Скорее нет</label>
+                        <label><input type="radio" name="s2q31" value="-2"> Абсолютно не согласен</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <p>Обидно, что, наделив таких, как я, разумом, Бог забыл наделить нас волей</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s2q32" value="2" required> Полностью согласен</label>
+                        <label><input type="radio" name="s2q32" value="1"> Скорее да</label>
+                        <label><input type="radio" name="s2q32" value="0"> Затрудняюсь</label>
+                        <label><input type="radio" name="s2q32" value="-1"> Скорее нет</label>
+                        <label><input type="radio" name="s2q32" value="-2"> Абсолютно не согласен</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <p>Мне тяжело общаться даже с самыми близкими людьми</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s2q33" value="2" required> Полностью согласен</label>
+                        <label><input type="radio" name="s2q33" value="1"> Скорее да</label>
+                        <label><input type="radio" name="s2q33" value="0"> Затрудняюсь</label>
+                        <label><input type="radio" name="s2q33" value="-1"> Скорее нет</label>
+                        <label><input type="radio" name="s2q33" value="-2"> Абсолютно не согласен</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <p>Многие люди, не превосходящие меня ни умом, ни талантом, имеют гораздо больше по прихоти фортуны</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s2q34" value="2" required> Полностью согласен</label>
+                        <label><input type="radio" name="s2q34" value="1"> Скорее да</label>
+                        <label><input type="radio" name="s2q34" value="0"> Затрудняюсь</label>
+                        <label><input type="radio" name="s2q34" value="-1"> Скорее нет</label>
+                        <label><input type="radio" name="s2q34" value="-2"> Абсолютно не согласен</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <p>Я всегда чувствовал, что как будто отгорожен от окружающих меня людей глухой стеной</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s2q35" value="2" required> Полностью согласен</label>
+                        <label><input type="radio" name="s2q35" value="1"> Скорее да</label>
+                        <label><input type="radio" name="s2q35" value="0"> Затрудняюсь</label>
+                        <label><input type="radio" name="s2q35" value="-1"> Скорее нет</label>
+                        <label><input type="radio" name="s2q35" value="-2"> Абсолютно не согласен</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <p>Я не ощущаю поддержки и понимания моих близких, поэтому мне не удалось многого достичь</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s2q36" value="2" required> Полностью согласен</label>
+                        <label><input type="radio" name="s2q36" value="1"> Скорее да</label>
+                        <label><input type="radio" name="s2q36" value="0"> Затрудняюсь</label>
+                        <label><input type="radio" name="s2q36" value="-1"> Скорее нет</label>
+                        <label><input type="radio" name="s2q36" value="-2"> Абсолютно не согласен</label>
+                    </div>
+                </div>                
+                
+            </form>
+            <button type="button" class="compute-btn">Показать результаты по этому опроснику</button>
+
+
+            <!-- Explanatory Text Above Chart -->
+            <div id="chart-info-2">
+                <h3>Результаты</h3>
+                <p>Количество баллов, полученное по каждой шкале, характеризует степень ее выраженности.</p>
+                <p><strong>Легенда:</strong></p>
+                <ul>
+                    <li>Низкая степень выраженности (≤ –6)</li>
+                    <li>Средняя степень выраженности (≥ –5 и ≤ -1)</li>
+                    <li>Высокая степень выраженности (≥ 0)</li>
+                </ul>
+            </div>
+
+            <!-- Chart Container -->
+            <div id="chart-container-2"></div>
+
+            <!-- Explanatory Text Below Chart -->
+            <div id="chart-summary-2" class="hidden">
+                <p><strong>Содержательная интерпретация результатов</strong></p>
+                <ul>
+                    <li>
+                        <strong>Бессмысленность социальных связей:</strong> отражает обесценивающие доверительные и близкие отношения суждения и негативное отношение к коммуникации с другими людьми, которые воспринимаются недостаточно душевными и сопереживающими, чрезмерно агрессивными или навязчивыми.
+                    </li>
+                    <li>
+                        <strong>Неудовлетворенность собой:</strong> раскрывает малоприятные в силу заниженной самооценки представления человека о своем несоответствии желаемому уровню, что может выражаться в негативном взгляде на собственную внешность, поступки, интеллект.
+                    </li>
+                    <li>
+                        <strong>Неудовлетворенность своим настоящим:</strong> олицетворяет эмоциональное неприятие, отторжение и недовольство текущим положением дел в различных областях жизни, например в сфере интимно-личностных отношений, трудовой деятельности, финансовых доходов, деле для души.
+                    </li>
+                    <li>
+                        <strong>Одиночество:</strong> представляет собой ощущение обособленности и изолированности, граничащее с изгойством, – человек чувствует, что находится на разных волнах с другими людьми, которые, по его мнению, не понимают его и недооценивают его по достоинству.
+                    </li>
+                    <li>
+                        <strong>Незащищенность:</strong> олицетворяет ощущение уязвимости и беззащитности, нередко по причине недостаточной убежденности в надежном плече рядом, то есть неудовлетворительной социальной поддержки.
+                    </li>
+                    <li>
+                        <strong>Отчаяние, страдание и чувство вины:</strong> отражает сгусток мрачных ощущений, неизменно сопутствующих экзистенциальному кризису: захлестывающее чувство безнадежности и беспросветности, особенно в ситуациях неудач; нестерпимые душевные терзания, вызванные нередкими разочарованиями и страхами; угрызения совести и ощущение своей вины по отношению к окружающим и к себе, появившиеся вслед за ошибками и упущенными шансами.
+                    </li>
+                </ul>                
+            </div>
+        </section>
+
+        <section id="survey5">
+            <h2>Опросник смысложизненного кризиса (СЖК)</h2>
+            <p>Ниже представлен перечень утверждений, описывающих различные способы отношения человека к собственной жизни. Внимательно прочитайте каждое утверждение и оцените, в какой степени оно справедливо применительно к Вам. Помните, что здесь нет правильных и неправильных, хороших и плохих ответов.</p>
+            <form>
+                <div class="question-group">
+                    <p>Не могу понять, в чем заключается смысл моей жизни</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s5q1" value="1" required> Совершенно неверно</label>
+                        <label><input type="radio" name="s5q1" value="2"> Пожалуй, неверно</label>
+                        <label><input type="radio" name="s5q1" value="3"> Hи да, ни нет</label>
+                        <label><input type="radio" name="s5q1" value="4"> Совершенно верно</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <p>Извлечение сиюминутной выгоды для меня важнее, чем стремление к далеким жизненным целям</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s5q2" value="1" required> Совершенно неверно</label>
+                        <label><input type="radio" name="s5q2" value="2"> Пожалуй, неверно</label>
+                        <label><input type="radio" name="s5q2" value="3"> Hи да, ни нет</label>
+                        <label><input type="radio" name="s5q2" value="4"> Совершенно верно</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <p>Ловлю себя на том, что большую часть времени занимаюсь бессмысленными делами</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s5q3" value="1" required> Совершенно неверно</label>
+                        <label><input type="radio" name="s5q3" value="2"> Пожалуй, неверно</label>
+                        <label><input type="radio" name="s5q3" value="3"> Hи да, ни нет</label>
+                        <label><input type="radio" name="s5q3" value="4"> Совершенно верно</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <p>Поиск смысла в жизни – это бесполезная затея</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s5q4" value="1" required> Совершенно неверно</label>
+                        <label><input type="radio" name="s5q4" value="2"> Пожалуй, неверно</label>
+                        <label><input type="radio" name="s5q4" value="3"> Hи да, ни нет</label>
+                        <label><input type="radio" name="s5q4" value="4"> Совершенно верно</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <p>Ощущаю внутреннюю опустошенность</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s5q5" value="1" required> Совершенно неверно</label>
+                        <label><input type="radio" name="s5q5" value="2"> Пожалуй, неверно</label>
+                        <label><input type="radio" name="s5q5" value="3"> Hи да, ни нет</label>
+                        <label><input type="radio" name="s5q5" value="4"> Совершенно верно</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <p>В ситуациях, где необходимо принять важное жизненное решение, испытываю полную растерянность</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s5q6" value="1" required> Совершенно неверно</label>
+                        <label><input type="radio" name="s5q6" value="2"> Пожалуй, неверно</label>
+                        <label><input type="radio" name="s5q6" value="3"> Hи да, ни нет</label>
+                        <label><input type="radio" name="s5q6" value="4"> Совершенно верно</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <p>В жизни преимущественно делаю то, что от меня ожидают другие люди или требуют обстоятельства</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s5q7" value="1" required> Совершенно неверно</label>
+                        <label><input type="radio" name="s5q7" value="2"> Пожалуй, неверно</label>
+                        <label><input type="radio" name="s5q7" value="3"> Hи да, ни нет</label>
+                        <label><input type="radio" name="s5q7" value="4"> Совершенно верно</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <p>Большинство моих поступков не связано с какой-либо жизненной целью</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s5q8" value="1" required> Совершенно неверно</label>
+                        <label><input type="radio" name="s5q8" value="2"> Пожалуй, неверно</label>
+                        <label><input type="radio" name="s5q8" value="3"> Hи да, ни нет</label>
+                        <label><input type="radio" name="s5q8" value="4"> Совершенно верно</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <p>Многие дела и обязанности, которые я вынужден(а) ежедневно выполнять, для меня скучны и безразличны</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s5q9" value="1" required> Совершенно неверно</label>
+                        <label><input type="radio" name="s5q9" value="2"> Пожалуй, неверно</label>
+                        <label><input type="radio" name="s5q9" value="3"> Hи да, ни нет</label>
+                        <label><input type="radio" name="s5q9" value="4"> Совершенно верно</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <p>Я «разбрасываюсь» по жизни: берусь за одно дело, но быстро от него отказываюсь и переключаюсь на другое</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s5q10" value="1" required> Совершенно неверно</label>
+                        <label><input type="radio" name="s5q10" value="2"> Пожалуй, неверно</label>
+                        <label><input type="radio" name="s5q10" value="3"> Hи да, ни нет</label>
+                        <label><input type="radio" name="s5q10" value="4"> Совершенно верно</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <p>Часто замечаю, что мои действия являются хаотическими и сумбурными</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s5q11" value="1" required> Совершенно неверно</label>
+                        <label><input type="radio" name="s5q11" value="2"> Пожалуй, неверно</label>
+                        <label><input type="radio" name="s5q11" value="3"> Hи да, ни нет</label>
+                        <label><input type="radio" name="s5q11" value="4"> Совершенно верно</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <p>Когда задумываюсь о том, ради чего я живу, меня охватывают тревога и беспокойство</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s5q12" value="1" required> Совершенно неверно</label>
+                        <label><input type="radio" name="s5q12" value="2"> Пожалуй, неверно</label>
+                        <label><input type="radio" name="s5q12" value="3"> Hи да, ни нет</label>
+                        <label><input type="radio" name="s5q12" value="4"> Совершенно верно</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <p>До сих пор не знаю, чего хочу от жизни</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s5q13" value="1" required> Совершенно неверно</label>
+                        <label><input type="radio" name="s5q13" value="2"> Пожалуй, неверно</label>
+                        <label><input type="radio" name="s5q13" value="3"> Hи да, ни нет</label>
+                        <label><input type="radio" name="s5q13" value="4"> Совершенно верно</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <p>Не понимаю, зачем я делаю то, что делаю в жизни</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s5q14" value="1" required> Совершенно неверно</label>
+                        <label><input type="radio" name="s5q14" value="2"> Пожалуй, неверно</label>
+                        <label><input type="radio" name="s5q14" value="3"> Hи да, ни нет</label>
+                        <label><input type="radio" name="s5q14" value="4"> Совершенно верно</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <p>В моей жизни нет единого и устойчивого направления</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s5q15" value="1" required> Совершенно неверно</label>
+                        <label><input type="radio" name="s5q15" value="2"> Пожалуй, неверно</label>
+                        <label><input type="radio" name="s5q15" value="3"> Hи да, ни нет</label>
+                        <label><input type="radio" name="s5q15" value="4"> Совершенно верно</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <p>Если бы меня спросили, что я ценю больше всего в своей жизни, я бы не смог(ла) дать определенный ответ</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s5q16" value="1" required> Совершенно неверно</label>
+                        <label><input type="radio" name="s5q16" value="2"> Пожалуй, неверно</label>
+                        <label><input type="radio" name="s5q16" value="3"> Hи да, ни нет</label>
+                        <label><input type="radio" name="s5q16" value="4"> Совершенно верно</label>
+                    </div>
+                </div>                
+            </form>
+            
+            
+            <button type="button" class="compute-btn">Показать результаты по этому опроснику</button>
+
+            <!-- Explanatory Text Above Chart -->
+            <div id="chart-info-5">
+                <h3>Результаты</h3>
+                <p>Количество баллов, полученное по каждой шкале, характеризует степень ее выраженности.</p>
+            </div>
+
+            <div id="chart-container-5" class="hidden"></div>
+        </section>
+        
+        <section id="survey3">
+            <h2>Опросник духовных переживаний</h2>
+            <p>Пожалуйста, укажите степень Вашего согласия с приведенными утверждениями.  Опросник предлагает пять градаций ответов: «полностью согласен», «скорее согласен», «затрудняюсь ответить», «скорее не согласен», «абсолютно не согласен». Выберите, пожалуйста, подходяший Вам ответ.</p>
+            <form>
+                <div class="question-group">
+                    <p>У меня было ощущение чего-то бесконечного.</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s3q1" value="1" required> Совершенно не согласен</label>
+                        <label><input type="radio" name="s3q1" value="2"> Hе согласен</label>
+                        <label><input type="radio" name="s3q1" value="3"> Hи да, ни нет</label>
+                        <label><input type="radio" name="s3q1" value="4"> Согласен</label>
+                        <label><input type="radio" name="s3q1" value="5"> Полностью согласен</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <p>Я чувствовал, что Бог рядом.</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s3q2" value="1" required> Совершенно не согласен</label>
+                        <label><input type="radio" name="s3q2" value="2"> Hе согласен</label>
+                        <label><input type="radio" name="s3q2" value="3"> Hи да, ни нет</label>
+                        <label><input type="radio" name="s3q2" value="4"> Согласен</label>
+                        <label><input type="radio" name="s3q2" value="5"> Полностью согласен</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <p>Я чувствовал себя полностью верным себе.</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s3q3" value="1" required> Совершенно не согласен</label>
+                        <label><input type="radio" name="s3q3" value="2"> Hе согласен</label>
+                        <label><input type="radio" name="s3q3" value="3"> Hи да, ни нет</label>
+                        <label><input type="radio" name="s3q3" value="4"> Согласен</label>
+                        <label><input type="radio" name="s3q3" value="5"> Полностью согласен</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <p>Я чувствовал единство с природой.</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s3q4" value="1" required> Совершенно не согласен</label>
+                        <label><input type="radio" name="s3q4" value="2"> Hе согласен</label>
+                        <label><input type="radio" name="s3q4" value="3"> Hи да, ни нет</label>
+                        <label><input type="radio" name="s3q4" value="4"> Согласен</label>
+                        <label><input type="radio" name="s3q4" value="5"> Полностью согласен</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <p>Я чувствовал свою связь со всем человечеством.</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s3q5" value="1" required> Совершенно не согласен</label>
+                        <label><input type="radio" name="s3q5" value="2"> Hе согласен</label>
+                        <label><input type="radio" name="s3q5" value="3"> Hи да, ни нет</label>
+                        <label><input type="radio" name="s3q5" value="4"> Согласен</label>
+                        <label><input type="radio" name="s3q5" value="5"> Полностью согласен</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <p>Я чувствовал свою связь с невыразимой силой бытия.</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s3q6" value="1" required> Совершенно не согласен</label>
+                        <label><input type="radio" name="s3q6" value="2"> Hе согласен</label>
+                        <label><input type="radio" name="s3q6" value="3"> Hи да, ни нет</label>
+                        <label><input type="radio" name="s3q6" value="4"> Согласен</label>
+                        <label><input type="radio" name="s3q6" value="5"> Полностью согласен</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <p>Я чувствовал свою близость к Богу.</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s3q7" value="1" required> Совершенно не согласен</label>
+                        <label><input type="radio" name="s3q7" value="2"> Hе согласен</label>
+                        <label><input type="radio" name="s3q7" value="3"> Hи да, ни нет</label>
+                        <label><input type="radio" name="s3q7" value="4"> Согласен</label>
+                        <label><input type="radio" name="s3q7" value="5"> Полностью согласен</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <p>У меня было ощущение единства своего внутреннего мира.</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s3q8" value="1" required> Совершенно не согласен</label>
+                        <label><input type="radio" name="s3q8" value="2"> Hе согласен</label>
+                        <label><input type="radio" name="s3q8" value="3"> Hи да, ни нет</label>
+                        <label><input type="radio" name="s3q8" value="4"> Согласен</label>
+                        <label><input type="radio" name="s3q8" value="5"> Полностью согласен</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <p>Я ощущал свою связь с природой.</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s3q9" value="1" required> Совершенно не согласен</label>
+                        <label><input type="radio" name="s3q9" value="2"> Hе согласен</label>
+                        <label><input type="radio" name="s3q9" value="3"> Hи да, ни нет</label>
+                        <label><input type="radio" name="s3q9" value="4"> Согласен</label>
+                        <label><input type="radio" name="s3q9" value="5"> Полностью согласен</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <p>Я ощущал свою близость ко всему человечеству.</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s3q10" value="1" required> Совершенно не согласен</label>
+                        <label><input type="radio" name="s3q10" value="2"> Hе согласен</label>
+                        <label><input type="radio" name="s3q10" value="3"> Hи да, ни нет</label>
+                        <label><input type="radio" name="s3q10" value="4"> Согласен</label>
+                        <label><input type="radio" name="s3q10" value="5"> Полностью согласен</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <p>Я чувствовал единство с чем-то, что не могу описать словами.</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s3q11" value="1" required> Совершенно не согласен</label>
+                        <label><input type="radio" name="s3q11" value="2"> Hе согласен</label>
+                        <label><input type="radio" name="s3q11" value="3"> Hи да, ни нет</label>
+                        <label><input type="radio" name="s3q11" value="4"> Согласен</label>
+                        <label><input type="radio" name="s3q11" value="5"> Полностью согласен</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <p>Я знал, что Бог со мной.</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s3q12" value="1" required> Совершенно не согласен</label>
+                        <label><input type="radio" name="s3q12" value="2"> Hе согласен</label>
+                        <label><input type="radio" name="s3q12" value="3"> Hи да, ни нет</label>
+                        <label><input type="radio" name="s3q12" value="4"> Согласен</label>
+                        <label><input type="radio" name="s3q12" value="5"> Полностью согласен</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <p>Я чувствовал себя соответствующим своей сущности.</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s3q13" value="1" required> Совершенно не согласен</label>
+                        <label><input type="radio" name="s3q13" value="2"> Hе согласен</label>
+                        <label><input type="radio" name="s3q13" value="3"> Hи да, ни нет</label>
+                        <label><input type="radio" name="s3q13" value="4"> Согласен</label>
+                        <label><input type="radio" name="s3q13" value="5"> Полностью согласен</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <p>Я ощущал свою близость к природе.</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s3q14" value="1" required> Совершенно не согласен</label>
+                        <label><input type="radio" name="s3q14" value="2"> Hе согласен</label>
+                        <label><input type="radio" name="s3q14" value="3"> Hи да, ни нет</label>
+                        <label><input type="radio" name="s3q14" value="4"> Согласен</label>
+                        <label><input type="radio" name="s3q14" value="5"> Полностью согласен</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <p>Я ощущал единство со всем человечеством.</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s3q15" value="1" required> Совершенно не согласен</label>
+                        <label><input type="radio" name="s3q15" value="2"> Hе согласен</label>
+                        <label><input type="radio" name="s3q15" value="3"> Hи да, ни нет</label>
+                        <label><input type="radio" name="s3q15" value="4"> Согласен</label>
+                        <label><input type="radio" name="s3q15" value="5"> Полностью согласен</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <p>Я чувствовал присутствие чего-то из другого мира или измерения.</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s3q16" value="1" required> Совершенно не согласен</label>
+                        <label><input type="radio" name="s3q16" value="2"> Hе согласен</label>
+                        <label><input type="radio" name="s3q16" value="3"> Hи да, ни нет</label>
+                        <label><input type="radio" name="s3q16" value="4"> Согласен</label>
+                        <label><input type="radio" name="s3q16" value="5"> Полностью согласен</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <p>Я чувствовал присутствие Бога.</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s3q17" value="1" required> Совершенно не согласен</label>
+                        <label><input type="radio" name="s3q17" value="2"> Hе согласен</label>
+                        <label><input type="radio" name="s3q17" value="3"> Hи да, ни нет</label>
+                        <label><input type="radio" name="s3q17" value="4"> Согласен</label>
+                        <label><input type="radio" name="s3q17" value="5"> Полностью согласен</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <p>У меня было чувство своей целостности.</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s3q18" value="1" required> Совершенно не согласен</label>
+                        <label><input type="radio" name="s3q18" value="2"> Hе согласен</label>
+                        <label><input type="radio" name="s3q18" value="3"> Hи да, ни нет</label>
+                        <label><input type="radio" name="s3q18" value="4"> Согласен</label>
+                        <label><input type="radio" name="s3q18" value="5"> Полностью согласен</label>
+                    </div>
+                </div>
+            </form>
+            <button type="button" class="compute-btn">Показать результаты по этому опроснику</button>
+
+            <!-- Explanatory Text Above Chart -->
+            <div id="chart-info-3">
+                <h3>Результаты</h3>
+                <p>Количество баллов, полученное по каждой шкале, характеризует степень ее выраженности.</p>
+            </div>
+
+            <div id="chart-container-3" class="hidden">
+            </div>
+
+            <!-- Explanatory Text Below Chart -->
+            <div id="chart-summary-3" class="hidden">
+                <p><strong>Содержательная интерпретация результатов</strong></p>
+                <p>Профиль по шкалам позволяет выделить разные типы духовности. Все шкалы опросника связаны с моралью, эвдемонической ориентацией и субъективным благополучием.</p>
+                <ul>
+                    <li><strong>Шкала «Бог»:</strong> тесно связана с религиозной духовностью.</li>
+                    <li><strong>Шкала «Трансцендентность»:</strong> тесно связана с верой в сверхъестественные явления.</li>
+                    <li><strong>Шкала «Человечество»:</strong> тесно связана с глобальной социальной идентификацией.</li>
+                    <li><strong>Шкала «Природа»:</strong> коррелирует с чувством связи с природой.</li>
+                    <li>
+                        <strong>Шкала «Самость»</strong> представлена как источник переживаний целостности «Я», однако позднее её авторы отказались от неё ввиду дискуссионности ее обоснования. 
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="survey4">
+            <h2>Опросник шкалы депрессии, тревоги и стресса (DASS‑21)</h2>
+            <p>Прочитайте, пожалуйста, каждое утверждение и выберите “никогда”, “редко”, “часто” или “почти всегда” в зависимости от того, насколько часто вы испытывали подобные состояния <strong>в течение прошедшей недели</strong>.</p>
+            <form>
+                <div class="question-group">
+                    <p>Мне было трудно успокоиться.</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s4q1" value="0" required> Никогда</label>
+                        <label><input type="radio" name="s4q1" value="1"> Редко</label>
+                        <label><input type="radio" name="s4q1" value="2"> Часто</label>
+                        <label><input type="radio" name="s4q1" value="3"> Почти всегда</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <p>Я чувствовал сухость во рту.</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s4q2" value="0" required> Никогда</label>
+                        <label><input type="radio" name="s4q2" value="1"> Редко</label>
+                        <label><input type="radio" name="s4q2" value="2"> Часто</label>
+                        <label><input type="radio" name="s4q2" value="3"> Почти всегда</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <p>Мне кажется, что я не испытывал никаких позитивных чувств.</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s4q3" value="0" required> Никогда</label>
+                        <label><input type="radio" name="s4q3" value="1"> Редко</label>
+                        <label><input type="radio" name="s4q3" value="2"> Часто</label>
+                        <label><input type="radio" name="s4q3" value="3"> Почти всегда</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <p>У меня были проблемы с дыханием (например, учащенное дыхание, одышка при отсутствии физической активности).</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s4q4" value="0" required> Никогда</label>
+                        <label><input type="radio" name="s4q4" value="1"> Редко</label>
+                        <label><input type="radio" name="s4q4" value="2"> Часто</label>
+                        <label><input type="radio" name="s4q4" value="3"> Почти всегда</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <p>Мне было трудно проявить инициативу для того, чтобы что-то сделать.</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s4q5" value="0" required> Никогда</label>
+                        <label><input type="radio" name="s4q5" value="1"> Редко</label>
+                        <label><input type="radio" name="s4q5" value="2"> Часто</label>
+                        <label><input type="radio" name="s4q5" value="3"> Почти всегда</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <p>Я слишком остро реагировал на некоторые ситуации.</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s4q6" value="0" required> Никогда</label>
+                        <label><input type="radio" name="s4q6" value="1"> Редко</label>
+                        <label><input type="radio" name="s4q6" value="2"> Часто</label>
+                        <label><input type="radio" name="s4q6" value="3"> Почти всегда</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <p>У меня была дрожь (например, в руках).</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s4q7" value="0" required> Никогда</label>
+                        <label><input type="radio" name="s4q7" value="1"> Редко</label>
+                        <label><input type="radio" name="s4q7" value="2"> Часто</label>
+                        <label><input type="radio" name="s4q7" value="3"> Почти всегда</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <p>Я чувствовал, что трачу много нервов.</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s4q8" value="0" required> Никогда</label>
+                        <label><input type="radio" name="s4q8" value="1"> Редко</label>
+                        <label><input type="radio" name="s4q8" value="2"> Часто</label>
+                        <label><input type="radio" name="s4q8" value="3"> Почти всегда</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <p>Меня тревожили ситуации, в которых я мог запаниковать и выглядеть глупо.</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s4q9" value="0" required> Никогда</label>
+                        <label><input type="radio" name="s4q9" value="1"> Редко</label>
+                        <label><input type="radio" name="s4q9" value="2"> Часто</label>
+                        <label><input type="radio" name="s4q9" value="3"> Почти всегда</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <p>Я чувствовал, что мне не на что надеяться.</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s4q10" value="0" required> Никогда</label>
+                        <label><input type="radio" name="s4q10" value="1"> Редко</label>
+                        <label><input type="radio" name="s4q10" value="2"> Часто</label>
+                        <label><input type="radio" name="s4q10" value="3"> Почти всегда</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <p>Я обнаруживал себя взволнованным.</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s4q11" value="0" required> Никогда</label>
+                        <label><input type="radio" name="s4q11" value="1"> Редко</label>
+                        <label><input type="radio" name="s4q11" value="2"> Часто</label>
+                        <label><input type="radio" name="s4q11" value="3"> Почти всегда</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <p>Мне было трудно расслабиться.</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s4q12" value="0" required> Никогда</label>
+                        <label><input type="radio" name="s4q12" value="1"> Редко</label>
+                        <label><input type="radio" name="s4q12" value="2"> Часто</label>
+                        <label><input type="radio" name="s4q12" value="3"> Почти всегда</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <p>Я чувствовал себя унылым и подавленным.</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s4q13" value="0" required> Никогда</label>
+                        <label><input type="radio" name="s4q13" value="1"> Редко</label>
+                        <label><input type="radio" name="s4q13" value="2"> Часто</label>
+                        <label><input type="radio" name="s4q13" value="3"> Почти всегда</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <p>Я был нетерпим ко всему, что мешало мне в моих делах.</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s4q14" value="0" required> Никогда</label>
+                        <label><input type="radio" name="s4q14" value="1"> Редко</label>
+                        <label><input type="radio" name="s4q14" value="2"> Часто</label>
+                        <label><input type="radio" name="s4q14" value="3"> Почти всегда</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <p>Я был близок к панике.</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s4q15" value="0" required> Никогда</label>
+                        <label><input type="radio" name="s4q15" value="1"> Редко</label>
+                        <label><input type="radio" name="s4q15" value="2"> Часто</label>
+                        <label><input type="radio" name="s4q15" value="3"> Почти всегда</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <p>Я не мог ничем увлечься.</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s4q16" value="0" required> Никогда</label>
+                        <label><input type="radio" name="s4q16" value="1"> Редко</label>
+                        <label><input type="radio" name="s4q16" value="2"> Часто</label>
+                        <label><input type="radio" name="s4q16" value="3"> Почти всегда</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <p>Мне казалось, что как человек я ничего не стою.</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s4q17" value="0" required> Никогда</label>
+                        <label><input type="radio" name="s4q17" value="1"> Редко</label>
+                        <label><input type="radio" name="s4q17" value="2"> Часто</label>
+                        <label><input type="radio" name="s4q17" value="3"> Почти всегда</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <p>Я чувствовал, что был довольно обидчив.</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s4q18" value="0" required> Никогда</label>
+                        <label><input type="radio" name="s4q18" value="1"> Редко</label>
+                        <label><input type="radio" name="s4q18" value="2"> Часто</label>
+                        <label><input type="radio" name="s4q18" value="3"> Почти всегда</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <p>Я чувствовал работу своего сердца при отсутствии физической активности (например, ощущение увеличения частоты сердечных сокращений, пропуска сердечных ударов).</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s4q19" value="0" required> Никогда</label>
+                        <label><input type="radio" name="s4q19" value="1"> Редко</label>
+                        <label><input type="radio" name="s4q19" value="2"> Часто</label>
+                        <label><input type="radio" name="s4q19" value="3"> Почти всегда</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <p>Мне было страшно без всякой на то причины.</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s4q20" value="0" required> Никогда</label>
+                        <label><input type="radio" name="s4q20" value="1"> Редко</label>
+                        <label><input type="radio" name="s4q20" value="2"> Часто</label>
+                        <label><input type="radio" name="s4q20" value="3"> Почти всегда</label>
+                    </div>
+                </div>
+                <div class="question-group">
+                    <p>Мне казалось, что жизнь бессмысленна.</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="s4q21" value="0" required> Никогда</label>
+                        <label><input type="radio" name="s4q21" value="1"> Редко</label>
+                        <label><input type="radio" name="s4q21" value="2"> Часто</label>
+                        <label><input type="radio" name="s4q21" value="3"> Почти всегда</label>
+                    </div>
+                </div>
+            </form>
+            <button type="button" class="compute-btn">Показать результаты по этому опроснику</button>
+
+            <!-- Explanatory Text Above Chart -->
+            <div id="chart-info-4">
+                <p>Для оценки результатов в соответствии с общепризнанными тестовыми нормами для DASS-21, рекомендуется использовать следующие показатели:</p>
+                <ul>
+                    <li>
+                        <strong>Стресс:</strong> 
+                        присутствует:
+                        <ul>
+                            <li>на очень низком уровне при <strong>0–7 баллах</strong>,</li>
+                            <li>на низком уровне при <strong>8–9 баллах</strong>,</li>
+                            <li>на умеренном уровне при <strong>10–12 баллах</strong>,</li>
+                            <li>на высоком уровне при <strong>13–16 баллах</strong>,</li>
+                            <li>на очень высоком уровне при <strong>17 баллах и более</strong>.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Тревога:</strong> 
+                        присутствует:
+                        <ul>
+                            <li>на очень низком уровне при <strong>0–3 баллах</strong>,</li>
+                            <li>на низком уровне при <strong>4–5 баллах</strong>,</li>
+                            <li>на умеренном уровне при <strong>6–7 баллах</strong>,</li>
+                            <li>на высоком уровне при <strong>8–9 баллах</strong>,</li>
+                            <li>на очень высоком уровне при <strong>10 баллах и более</strong>.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Депрессия:</strong> 
+                        присутствует:
+                        <ul>
+                            <li>на очень низком уровне при <strong>0–4 баллах</strong>,</li>
+                            <li>на низком уровне при <strong>5–6 баллах</strong>,</li>
+                            <li>на умеренном уровне при <strong>7–10 баллах</strong>,</li>
+                            <li>на высоком уровне при <strong>11–13 баллах</strong>,</li>
+                            <li>на очень высоком уровне при <strong>14 баллах и более</strong>.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div id="chart-container-4" class="hidden"></div>
+
+            <!-- Explanatory Text Below Chart -->
+            <div id="chart-summary-4" class="hidden">
+                <p><strong>Содержательная интерпретация результатов</strong></p>
+                <ul>
+                    <li>
+                        <strong>Шкала стресса:</strong> чувствительна к хроническому неспецифическому возбуждению и диагностирует трудности с расслаблением, нервное возбуждение и раздражительность.
+                    </li>
+                    <li>
+                        <strong>Шкала тревоги:</strong> оценивает вегетативное возбуждение, напряжение скелетных мышц, ситуативную тревогу и субъективный опыт переживания тревожных состояний.
+                    </li>
+                    <li>
+                        <strong>Шкала депрессии:</strong> измеряет такие психические состояния и переживания, как дисфория, безнадежность, обесценивание жизни, самоуничижение, апатия и ангедония.
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="send">
+            <h2 id="sendFormTitle">Отправить результаты</h2>
+            <p id="press-to-send">Нажмите, чтобы отправить ваши результаты для научного исследования.</p>
+            <button type="button" class="compute-btn">Отправить</button>
+
+            <div id="thank-you-message" class="hidden">
+                <p><strong>Спасибо вам за участие в исследовании !</strong></p>
+                <p>Я искренне благодарна вам за время, внимание и желание поучаствовать. Благодаря вам мы делаем значительный шаг вперед в науке. Если у вас остались какие-либо вопросы или комментарии, не стесняйтесь связаться со мной <a href="https://wa.me/77772451227" target="_blank">+77772451227</a>.</p>
+                <p>С благодарностью,</p>
+                <p><strong>Анна Лёвина</strong><br>Клинический психолог</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Анна Лёвина, клинический психолог</p>
+        <button class="footer-btn copy-btn">
+            <img src="copy-icon.png" alt="Copy" />
+        </button>
+        <button class="footer-btn paste-btn">
+            <img src="paste-icon.png" alt="Paste" />
+        </button>
+    </footer>
+    
+    <!-- Popup Frame -->
+    <div id="popup" class="popup hidden">
+        <p></p>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
