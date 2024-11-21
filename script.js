@@ -145,6 +145,15 @@ document.addEventListener("DOMContentLoaded", () => {
     let survey5ResultsComputed = false;
     let surveyOverallResultsWereSent = false;
 
+    const radioGroups = document.querySelectorAll('.radio-group');
+
+    radioGroups.forEach(group => {
+        const radioButtons = group.querySelectorAll('input[type="radio"]');
+        if (radioButtons.length === 2) {
+            group.classList.add('horizontal');
+        }
+    });
+    
     function disableSurveyAnswering(survey) {
         // Disable radio buttons
         const radioButtons = survey.querySelectorAll("input[type='radio']");
