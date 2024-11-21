@@ -374,6 +374,7 @@ button:active {
 #chart-summary-2,
 #chart-summary-3,
 #chart-summary-4,
+#chart-summary-5,
 #thank-you-message {
     margin: 20px 0;
     padding: 15px;
@@ -407,6 +408,7 @@ button:active {
 #chart-summary-2 p,
 #chart-summary-3 p,
 #chart-summary-4 p,
+#chart-summary-5 p,
 #thank-you-message p,
 #chart-info p,
 #chart-info-2 p,
@@ -429,6 +431,7 @@ button:active {
 #chart-summary-2,
 #chart-summary-3,
 #chart-summary-4,
+#chart-summary-5,
 #thank-you-message {
     align-self: flex-start; /* Override any parent flexbox alignment */
 }

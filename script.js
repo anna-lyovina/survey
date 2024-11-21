@@ -124,11 +124,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const computeBtn5 = survey5.querySelector(".compute-btn");
     const chartContainer5 = document.getElementById("chart-container-5");
     const chartInfo5 = document.getElementById("chart-info-5");
-    // const chartSummary5 = document.getElementById("chart-summary-5");
+    const chartSummary5 = document.getElementById("chart-summary-5");
 
     chartInfo5.style.display = 'none';
     chartContainer5.style.display = 'none';
-    // chartSummary5.style.display = 'none';
+    chartSummary5.style.display = 'none';
     survey5.style.display = 'none';
 
     const sendForm = document.getElementById("send");
@@ -153,7 +153,7 @@ document.addEventListener("DOMContentLoaded", () => {
             group.classList.add('horizontal');
         }
     });
-    
+
     function disableSurveyAnswering(survey) {
         // Disable radio buttons
         const radioButtons = survey.querySelectorAll("input[type='radio']");
@@ -915,7 +915,7 @@ document.addEventListener("DOMContentLoaded", () => {
             // Create value
             const value = document.createElement("div");
             value.classList.add("bar-value-3");
-            value.textContent = item.value.toFixed(2);
+            value.textContent = item.value;
 
             // Append label, bar, and value to the bar container
             barContainer.appendChild(label);
@@ -930,38 +930,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Function to calculate scores for all scales
     function computeSurvey3Scores() {
-        // Define the scales as a list
+        // Define the scales as a list of question arrays
         const scales = [
-            { name: "Бог", questions: [2, 12, 7, 17], weights: [0.89, 0.89, 0.91, 0.92] },
-            { name: "Трансцендентность", questions: [1, 6, 11, 16], weights: [0.42, 0.71, 0.76, 0.54] },
-            { name: "Человечество", questions: [5, 10, 15], weights: [0.85, 0.88, 0.92] },
-            { name: "Природа", questions: [4, 9, 14], weights: [0.85, 0.92, 0.89] },
-            { name: "Самость", questions: [3, 8, 13, 18], weights: [0.58, 0.77, 0.67, 0.79] }
+            [2, 12, 7, 17], // Бог
+            [1, 6, 11, 16], // Трансцендентность
+            [5, 10, 15],    // Человечество
+            [4, 9, 14],     // Природа
+            [3, 8, 13, 18]  // Самость
         ];
 
-        const scores = [];
+        // Initialize scores for each scale
+        const scores = Array(scales.length).fill(0);
 
-        // Iterate over the scales list
-        for (const scale of scales) {
-            const { questions, weights } = scale;
-            let scaleScore = 0;
-
-            // Calculate the weighted sum for this scale
-            for (let i = 0; i < questions.length; i++) {
-                const questionNumber = questions[i];
-                const weight = weights[i];
-
-                // Get the user's choice for the question
-                const inputElement = document.querySelector(`input[name="s3q${questionNumber}"]:checked`);
-                const userChoice = inputElement ? parseInt(inputElement.value, 10) : 0;
-
-                // Add to the scale score
-                scaleScore += userChoice * weight;
-            }
-
-            // Store the score for this scale
-            scores.push(scaleScore);
-        }
+        // Loop through each scale
+        scales.forEach((questions, scaleIndex) => {
+            questions.forEach(question => {
+                // Get the selected radio input for the current question
+                const selectedInput = document.querySelector(`input[name="s3q${question}"]:checked`);
+                if (selectedInput) {
+                    // Add the value to the corresponding scale
+                    scores[scaleIndex] += parseInt(selectedInput.value, 10);
+                }
+            });
+        });
 
         return scores;
     }
@@ -1010,11 +1001,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const scores = computeSurvey3Scores();
         const data = [
-            { label: "Бог", value: scores[0], maxValue: 18.05 },
-            { label: "Трансцендентность", value: scores[1], maxValue: 12.15 },
-            { label: "Человечество", value: scores[2], maxValue: 13.25 },
-            { label: "Природа", value: scores[3], maxValue: 13.3 },
-            { label: "Самость", value: scores[4], maxValue: 14.05 },
+            { label: "Бог", value: scores[0], maxValue: 20 },
+            { label: "Трансцендентность", value: scores[1], maxValue: 20 },
+            { label: "Человечество", value: scores[2], maxValue: 15 },
+            { label: "Природа", value: scores[3], maxValue: 15 },
+            { label: "Самость", value: scores[4], maxValue: 20 },
         ];
 
         // Generate the chart
@@ -1360,8 +1351,8 @@ document.addEventListener("DOMContentLoaded", () => {
         chartInfo5.classList.remove("hidden");
         chartContainer5.style.display = ''
         chartContainer5.classList.remove("hidden");
-        // chartSummary5.style.display = ''
-        // chartSummary5.classList.remove("hidden");
+        chartSummary5.style.display = ''
+        chartSummary5.classList.remove("hidden");
 
         disableSurveyAnswering(survey5);
         survey5ResultsComputed = true;
