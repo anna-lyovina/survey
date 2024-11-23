@@ -669,7 +669,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 intervals.forEach((interval, index) => {
                     const intervalMark = document.createElement("div");
                     intervalMark.className = "interval-mark";
-                    intervalMark.textContent = interval;
+                    intervalMark.textContent = interval + " ";
+
+                    if (shortLabels)
+                    {
+                        intervalMark.style.fontSize = "8px";
+                    }
 
                     let leftPercent = null;
                     let rightPercent = null;
@@ -683,26 +688,14 @@ document.addEventListener("DOMContentLoaded", () => {
                     {
                         intervalMark.style.color = colors[colors.length-1];
                     }
-                    else if (interval === "0][1")
-                    {
-                        intervalMark.innerText = "0";
-                    }
                     else
                     {
-                        lastIntBeforeBracket = extractIntegerBeforeBracket(intervals[index-1]);
                         intBeforeBracket = extractIntegerBeforeBracket(interval);
-                        
-                        textBeforeBracket = intBeforeBracket.toString();
-                        if (intBeforeBracket > (lastIntBeforeBracket + 2))
-                        {
+                            textBeforeBracket = intBeforeBracket.toString();
                             intervalMark.innerHTML = `
                             <span style="color: ${colors[index-1]};">${textBeforeBracket}]</span>
-                            <span style="color: ${colors[index]};">${interval.slice(textBeforeBracket.length + 1)}</span>
+                            <span style="color: ${colors[index]};">${interval.slice(textBeforeBracket.length + 1)} </span>
                         `;
-                        }
-                        else{
-                            intervalMark.innerHTML = `<span style="color: ${colors[index]};">${interval.slice(textBeforeBracket.length + 1)}</span>`;
-                        }
                     }
                     
                     if (index === 0) {
@@ -711,7 +704,6 @@ document.addEventListener("DOMContentLoaded", () => {
                         rightPercent = 0;
                     } else {
                         const firstInt = extractIntegerBeforeBracket(interval);
-                        const segmentIndex = Math.floor(segmentsPerScoreUnit * (firstInt-min));
                         centerPercent = ((segmentsPerScoreUnit * (firstInt-min)) / nbOfSegments) * 100;
                     }
 
