@@ -537,7 +537,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function fillChart(chartSuperContainer, data, params) {
-        const { title, colors, legend, sharedIntervals, nbOfSegments, negative } = params;
+        const { title, colors, legend, sharedIntervals, nbOfSegments, negative, shortLabels } = params;
 
 
         if (title && title.length > 0)
@@ -582,6 +582,10 @@ document.addEventListener("DOMContentLoaded", () => {
             const row = document.createElement("div");
             row.className = "chart-row";
 
+            if (shortLabels)
+            {
+                row.style.gridTemplateColumns = "75px auto 50px";
+            }
             // Trait Label
             if (label && label.length > 1)
             {
@@ -1214,7 +1218,8 @@ document.addEventListener("DOMContentLoaded", () => {
             {
                 colors: ['green', 'olive', 'orange', 'crimson', 'red'],
                 legend: ['норма ', 'низкий', 'умеренный', 'высокий', 'очень высокий уровень'],
-                nbOfSegments: 32
+                nbOfSegments: 32,
+                shortLabels: true
             });
 
 
