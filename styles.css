@@ -342,6 +342,7 @@ button:active {
     opacity: 0; /* Start invisible */
     pointer-events: none; /* Prevent interactions when hidden */
     transition: opacity 0.5s ease;
+    pointer-events: none;
 }
 
 .popup p {
@@ -351,13 +352,11 @@ button:active {
 /* Visible State */
 .popup.visible {
     opacity: 1; /* Fade-in effect */
-    pointer-events: auto;
 }
 
 /* Hidden State */
 .popup.hidden {
     opacity: 0;
-    pointer-events: none;
 }
 
 .hidden {
