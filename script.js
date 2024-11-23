@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const survey1 = document.getElementById("survey1");
     const computeBtn = survey1.querySelector(".compute-btn");
-    const chartContainer = document.getElementById("chart-container");
+    const chartContainer = survey1.querySelector(".chart-super-container");
     const chartInfo = document.getElementById("chart-info");
     const chartSummary = document.getElementById("chart-summary");
     
@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const survey2 = document.getElementById("survey2");
     const computeBtn2 = survey2.querySelector(".compute-btn");
-    const chartContainer2 = document.getElementById("chart-container-2");
+    const chartContainer2 = survey2.querySelector(".chart-super-container");
     const chartInfo2 = document.getElementById("chart-info-2");
     const chartSummary2 = document.getElementById("chart-summary-2");
 
@@ -99,7 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const survey3 = document.getElementById("survey3");
     const computeBtn3 = survey3.querySelector(".compute-btn");
-    const chartContainer3 = document.getElementById("chart-container-3");
+    const chartContainer3 = survey3.querySelector(".chart-super-container");
     const chartInfo3 = document.getElementById("chart-info-3");
     const chartSummary3 = document.getElementById("chart-summary-3");
     
@@ -111,7 +111,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const survey4 = document.getElementById("survey4");
     const computeBtn4 = survey4.querySelector(".compute-btn");
-    const chartContainer4 = document.getElementById("chart-container-4");
+    const chartContainer4 = survey4.querySelector(".chart-super-container");
     const chartInfo4 = document.getElementById("chart-info-4");
     const chartSummary4 = document.getElementById("chart-summary-4");
 
@@ -122,7 +122,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const survey5 = document.getElementById("survey5");
     const computeBtn5 = survey5.querySelector(".compute-btn");
-    const chartContainer5 = document.getElementById("chart-container-5");
+    const chartContainer5 = survey5.querySelector(".chart-super-container");
     const chartInfo5 = document.getElementById("chart-info-5");
     const chartSummary5 = document.getElementById("chart-summary-5");
 
@@ -506,59 +506,243 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 3000);
     }
 
-    function getBarColor(value) {
-        if (value <= 3) {
-            return "#BBDEFB"; // Low intensity (light blue)
-        } else if (value > 3 && value <= 6) {
-            return "#2196F3"; // Standard intensity (medium blue)
-        } else if (value > 6 && value <= 8) {
-            return "#1976D2"; // High intensity (darker blue)
-        } else if (value === 9 || value === 10) {
-            return "#0D47A1"; // Very high intensity (darkest blue)
+    
+    function findInterval(intervals, num) {
+        // Use a regular expression to match all ranges in the format [x-y]
+        const rangePattern = /\[(-?\d+):(-?\d+)\]/g;
+        let match;
+        const stdIntervals = [];
+
+        // Iterate over all matches and extract numbers
+        while ((match = rangePattern.exec(intervals.join(':'))) !== null) {
+            const start = parseInt(match[1], 10); // Convert the first number to an integer
+            const end = parseInt(match[2], 10);   // Convert the second number to an integer
+            stdIntervals.push([start, end]);           // Add the range as a sub-array
         }
+
+        // Convert the intervals into the specific interval that matches the number
+        const intervalToFind = stdIntervals.find(interval => num >= interval[0] && num <= interval[1]);
+
+        // Use indexOf to locate the index of the matching interval
+        return intervalToFind ? stdIntervals.indexOf(intervalToFind) : 0;
     }
 
-    function getBarClass(value) {
-        if (value <= -6) {
-            return "low"; // Low intensity (Brown)
-        } else if (value > -6 && value <= -1) {
-            return "standard"; // Standard intensity (Light green)
-        } else if (value > -1) {
-            return "high"; // High intensity (Medium green)
+    function extractIntegerBeforeBracket(input) {
+        // Use a regular expression to find the first integer before the "]"
+        const match = input.match(/(-?\d+)\]/);
+        if (match) {
+            return parseInt(match[1], 10); // Convert the matched number to an integer
         }
+        return null; // Return null if no match is found
     }
 
-    function createChart(data) {
-        data.forEach((item) => {
+    function fillChart(chartSuperContainer, data, params) {
+        const { title, colors, legend, sharedIntervals, nbOfSegments, negative } = params;
+
+
+        if (title && title.length > 0)
+        {
+            const charTitle = document.createElement("div");
+            charTitle.className = "chart-title";
+            charTitle.innerText = title;
+            chartSuperContainer.appendChild(charTitle);
+        }
+        
+        const chartContainer = document.createElement("div");
+        chartContainer.className = "chart-container";
+        if (sharedIntervals)
+        {
+            chartContainer.style.gap = '5px';
+        }
+        chartSuperContainer.appendChild(chartContainer);
+
+        data.forEach(({ label, score, intervals }, data_index) => {
+            let min
+            let max
+            
+            if (sharedIntervals)
+            {
+                min = parseInt(sharedIntervals[0].slice(1));
+                max = parseInt(sharedIntervals[sharedIntervals.length-1].slice(0, -1));
+            }
+            else
+            {
+                min = parseInt(intervals[0].slice(1));
+                max = parseInt(intervals[intervals.length-1].slice(0, -1));
+            }
+
+            if (!intervals && data_index == data.length -1)
+            {
+                intervals = sharedIntervals;
+            }
+
+            scoreIndex = intervals ? findInterval(intervals, score) : findInterval(sharedIntervals, score);
+            barColor = colors[scoreIndex];
+
+            const row = document.createElement("div");
+            row.className = "chart-row";
+
+            // Trait Label
+            if (label && label.length > 1)
+            {
+                const labelDiv = document.createElement("div");
+                labelDiv.className = "trait-label";
+                labelDiv.textContent = label;
+                row.appendChild(labelDiv);
+            }
+            
+            // Bar Container
             const barContainer = document.createElement("div");
-            barContainer.classList.add("bar-container");
-
-            const label = document.createElement("span");
-            label.classList.add("bar-label");
-            label.textContent = item.label;
+            barContainer.className = "bar-container";
 
             const bar = document.createElement("div");
-            bar.classList.add("bar");
+            bar.className = "bar";
 
-            const barFill = document.createElement("div");
-            barFill.classList.add("bar-fill");
-            barFill.style.width = `${item.value * 10}%`;
-            barFill.style.backgroundColor = getBarColor(item.value);
+            // Explicitly calculate segment positions
+            const segmentsPerScoreUnit = nbOfSegments / (max - min);
+            const segmentWidthPercent = 100 / nbOfSegments;
 
-            const value = document.createElement("span");
-            value.classList.add("bar-value");
-            value.textContent = item.value;
+            const fullSegments = Math.floor(segmentsPerScoreUnit * (score- min));
+            const semiSegmentIndex = Math.ceil(segmentsPerScoreUnit * (score- min));
 
-            bar.appendChild(barFill);
-            barContainer.appendChild(label);
+            for (let i = 0; i < nbOfSegments; i++) {
+                const segment = document.createElement("div");
+                segment.className = "segment";
+                segment.style.left = `${i * segmentWidthPercent}%`;
+                segment.style.width = `${segmentWidthPercent}%`;
+
+                if (negative)
+                {
+                    if (score > 0)
+                    {
+                        if ((i > 11) && (i < (12 + score)))
+                        {
+                            segment.style.backgroundColor = barColor;
+                            if (i == 12)
+                            {
+                                segment.style.borderLeft = "3px solid black"
+                            }
+                        }
+                    }
+                    else if (score < 0)
+                    {
+                        const minIndex = 12 + score-1;
+                        if ((i > minIndex) && (i < 12))
+                        {
+                            segment.style.backgroundColor = barColor;
+                            if (i == 11)
+                            {
+                                segment.style.borderRight = "3px solid black"
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    if (i < fullSegments) 
+                    {
+                        segment.style.backgroundColor = barColor;
+                    } 
+                    else if (i === semiSegmentIndex - 1) {
+                        // segment.classList.add('semi-filled')
+                        const rem = 100. * (segmentsPerScoreUnit * (score- min) - Math.floor(segmentsPerScoreUnit * (score- min)));
+                        segment.style.background = `linear-gradient(to right, ${barColor} ${rem}%, transparent 50%)`;
+                    }
+                }
+                
+
+
+                bar.appendChild(segment);
+            }
+
+            // Intervals
+            let intervalsDiv;
+            if (intervals)
+            {
+                intervalsDiv = document.createElement("div");
+                intervalsDiv.className = "intervals";
+
+                intervals.forEach((interval, index) => {
+                    const intervalMark = document.createElement("div");
+                    intervalMark.className = "interval-mark";
+                    intervalMark.textContent = interval;
+
+                    let leftPercent = null;
+                    let rightPercent = null;
+                    let centerPercent = null;
+
+                    if (index === 0)
+                    {
+                        intervalMark.style.color = colors[0];
+                    }
+                    else if (index === intervals.length-1)
+                    {
+                        intervalMark.style.color = colors[colors.length-1];
+                    }
+                    else if (interval === "0][1")
+                    {
+                        intervalMark.innerText = "0";
+                    }
+                    else
+                    {
+                        textBeforeBracket = extractIntegerBeforeBracket(interval).toString();
+                        intervalMark.innerHTML = `
+                            <span style="color: ${colors[index-1]};">${textBeforeBracket}]</span>
+                            <span style="color: ${colors[index]};">${interval.slice(textBeforeBracket.length + 1)}</span>
+                        `;
+                    }
+                    
+                    if (index === 0) {
+                        leftPercent = 0;
+                    } else if (index === intervals.length-1) {
+                        rightPercent = 0;
+                    } else {
+                        const firstInt = extractIntegerBeforeBracket(interval);
+                        const segmentIndex = Math.floor(segmentsPerScoreUnit * (firstInt-min));
+                        centerPercent = ((segmentsPerScoreUnit * (firstInt-min)) / nbOfSegments) * 100;
+                    }
+
+                    if (leftPercent !== null) {
+                        intervalMark.style.left = `${leftPercent}%`;
+                    }
+                    if (rightPercent !== null) {
+                        intervalMark.style.right = `${rightPercent}%`;
+                    }
+                    if (centerPercent !== null) {
+                        intervalMark.style.left = `${centerPercent}%`;
+                        intervalMark.style.transform = 'translateX(-50%)';
+                    }
+
+                    intervalsDiv.appendChild(intervalMark);
+                });
+            }
+            
             barContainer.appendChild(bar);
-            barContainer.appendChild(value);
+            if (intervals)
+            {
+                barContainer.appendChild(intervalsDiv);
+            }
+            row.appendChild(barContainer);
 
-            chartContainer.appendChild(barContainer);
+            // Score
+            const scoreDiv = document.createElement("div");
+            scoreDiv.className = "score";
+            scoreDiv.textContent = score;
+            row.appendChild(scoreDiv);
+
+            chartContainer.appendChild(row);
         });
-    }
 
-    
+        if (legend && legend.length > 0)
+        {
+            const legendElement = document.createElement('div');
+            legendElement.className = 'chart-legend';
+            legendElement.innerHTML = colors.map((color, index) => 
+                    `<span style="color: ${color}">${legend[index]}</span>`
+                ).join(' ⇒ ');
+            chartSuperContainer.appendChild(legendElement);
+        }
+    }
 
     function computeSurvey1Scores()
     {
@@ -662,17 +846,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
         let radicalScores = computeSurvey1Scores();
         const data = [
-            { label: "Шизоидный", value: radicalScores[0] },
-            { label: "Паранойяльный", value: radicalScores[1] },
-            { label: "Психастенический", value: radicalScores[2] },
-            { label: "Эксплозивный", value: radicalScores[3] },
-            { label: "Субдепрессивный", value: radicalScores[4] },
-            { label: "Гипертимический", value: radicalScores[5] },
-            { label: "Астенический", value: radicalScores[6] },
-            { label: "Истероидный", value: radicalScores[7] },
+            { label: "Шизоидный", score: radicalScores[0], intervals: ["[0", "3][4", "6][7", "8][9", "10]"] },
+            { label: "Паранойяльный", score: radicalScores[1], intervals: ["[0", "2][3", "6][7", "8][9", "10]"] },
+            { label: "Психастенический", score: radicalScores[2], intervals: ["[0", "2][3", "4][5", "7][8", "10]"] },
+            { label: "Эксплозивный", score: radicalScores[3], intervals: ["[0", "2][3", "5][6", "7][8", "10]"] },
+            { label: "Субдепрессивный", score: radicalScores[4], intervals: ["[0", "1][2", "4][5", "7][8", "10]"] },
+            { label: "Гипертимический", score: radicalScores[5], intervals: ["[0", "1][2", "5][6", "7][8", "10]"] },
+            { label: "Астенический", score: radicalScores[6], intervals: ["[0", "2][3", "6][7", "8][9", "10]"] },
+            { label: "Истероидный", score: radicalScores[7], intervals: ["[0", "1][2", "5][6", "7][8", "10]"] }
         ];
 
-        createChart(data);
+        fillChart(chartContainer, data, 
+            {
+                title: "Выраженность радикалов",
+                colors: ['#6CF', '#39F', '#36C', '#00C'],
+                legend: ['ниже ср.', 'средняя', 'выше ср.', 'акцентуация'],
+                nbOfSegments: 25
+            });
+
         chartInfo.style.display = ''
         chartInfo.classList.remove("hidden");
         chartContainer.style.display = ''
@@ -700,65 +891,6 @@ document.addEventListener("DOMContentLoaded", () => {
             await checkSurveysAsync();
         })();
     });
-
-    function createSurvey2Chart(data) {
-        chartContainer2.innerHTML = ""; // Clear any existing content
-
-        data.forEach((item) => {
-            // Create bar container
-            const barContainer = document.createElement("div");
-            barContainer.classList.add("bar-container-2");
-
-            // Create label
-            const label = document.createElement("div");
-            label.classList.add("bar-label-2");
-            label.textContent = item.label;
-
-            // Create bar row
-            const barRow = document.createElement("div");
-            barRow.classList.add("bar-row-2");
-
-            // Create bar
-            const bar = document.createElement("div");
-            bar.classList.add("bar-2");
-
-            // Create center line
-            const centerLine = document.createElement("div");
-            centerLine.classList.add("center-line-2");
-
-            // Create bar fill
-            const barFill = document.createElement("div");
-            barFill.classList.add("bar-fill-2", getBarClass(item.value));
-            barFill.style.width = `${Math.abs(item.value) * 10}%`;
-
-            if (item.value < 0) {
-                barFill.style.left = "auto"; // Stretch to the left
-                barFill.style.right = "50%"; // Start from the center and extend left
-            } else {
-                barFill.style.left = "50%"; // Start at the center
-                barFill.style.right = "auto";
-            }
-
-            bar.appendChild(centerLine);
-            bar.appendChild(barFill);
-
-            // Create value
-            const value = document.createElement("div");
-            value.classList.add("bar-value-2");
-            value.textContent = item.value;
-
-            // Append bar and value to the bar row
-            barRow.appendChild(bar);
-            barRow.appendChild(value);
-
-            // Append label and bar row to the container
-            barContainer.appendChild(label);
-            barContainer.appendChild(barRow);
-
-            // Append the container to the chart
-            chartContainer2.appendChild(barContainer);
-        });
-    }
 
     function computeSurvey2Scores()
     {
@@ -833,16 +965,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const scores = computeSurvey2Scores();
         const data = [
-            { label: "Бессмысленность социальных связей", value: scores[0] },
-            { label: "Неудовлетворенность собой", value: scores[1] },
-            { label: "Неудовлетворенность своим настоящим", value: scores[2] },
-            { label: "Одиночество", value: scores[3] },
-            { label: "Незащищенность", value: scores[4] },
-            { label: "Отчаяние, страдание и чувство вины", value: scores[5] },
+            { label: "Бессмысленность социальных связей", score: scores[0] },
+            { label: "Неудовлетворенность собой", score: scores[1] },
+            { label: "Неудовлетворенность своим настоящим", score: scores[2] },
+            { label: "Одиночество", score: scores[3] },
+            { label: "Незащищенность", score: scores[4] },
+            { label: "Отчаяние, страдание и чувство вины", score: scores[5] }
         ];
 
-        // Generate the chart
-        createSurvey2Chart(data);
+        fillChart(chartContainer2, data, 
+            {
+                colors: ['green', 'olive', 'crimson'],
+                legend: ['низкий', 'средний', 'высокий уровень'], 
+                sharedIntervals: ["[-12", "-6][-5", "0][1", "12]"],
+                nbOfSegments: 24,
+                negative: true
+            });
+
+
         chartInfo2.style.display = ''
         chartInfo2.classList.remove("hidden");
         chartContainer2.style.display = ''
@@ -871,62 +1011,6 @@ document.addEventListener("DOMContentLoaded", () => {
             await checkSurveysAsync();
         })();
     });
-
-    // Assign color intensity based on value
-    function getColorClass(value, maxValue) {
-        const percentage = (value / maxValue) * 100;
-
-        if (percentage <= 25) {
-            return "low"; // Light blue for low values
-        } else if (percentage > 25 && percentage <= 50) {
-            return "medium"; // Medium blue
-        } else if (percentage > 50 && percentage <= 75) {
-            return "high"; // Darker blue
-        } else {
-            return "very-high"; // Deep blue
-        }
-    }
-
-    function createSurvey3Chart(data) {
-        chartContainer3.innerHTML = ""; // Clear any existing content
-
-        data.forEach((item) => {
-            // Create bar container
-            const barContainer = document.createElement("div");
-            barContainer.classList.add("bar-container-3");
-
-            // Create label
-            const label = document.createElement("div");
-            label.classList.add("bar-label-3");
-            label.textContent = item.label;
-
-            // Create bar
-            const bar = document.createElement("div");
-            bar.classList.add("bar-3");
-
-            // Create bar fill
-            const barFill = document.createElement("div");
-            barFill.classList.add("bar-fill-3", getColorClass(item.value, item.maxValue));
-            barFill.style.width = `${(item.value / item.maxValue) * 100}%`;
-
-            // Add fill to the bar
-            bar.appendChild(barFill);
-
-            // Create value
-            const value = document.createElement("div");
-            value.classList.add("bar-value-3");
-            value.textContent = item.value;
-
-            // Append label, bar, and value to the bar container
-            barContainer.appendChild(label);
-            barContainer.appendChild(bar);
-            barContainer.appendChild(value);
-
-            // Append the bar container to the chart container
-            chartContainer3.appendChild(barContainer);
-        });
-    }
-
 
     // Function to calculate scores for all scales
     function computeSurvey3Scores() {
@@ -1001,15 +1085,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const scores = computeSurvey3Scores();
         const data = [
-            { label: "Бог", value: scores[0], maxValue: 20 },
-            { label: "Трансцендентность", value: scores[1], maxValue: 20 },
-            { label: "Человечество", value: scores[2], maxValue: 15 },
-            { label: "Природа", value: scores[3], maxValue: 15 },
-            { label: "Самость", value: scores[4], maxValue: 20 },
+            { label: "Бог", score: scores[0], intervals: ["[4", "20]"] },
+            { label: "Трансцендентность", score: scores[1], intervals: ["[4", "20]"] },
+            { label: "Человечество", score: scores[2], intervals: ["[3", "15]"] },
+            { label: "Природа", score: scores[3], intervals: ["[3", "15]"] },
+            { label: "Самость", score: scores[4], intervals: ["[4", "20]"] }
         ];
 
-        // Generate the chart
-        createSurvey3Chart(data);
+        fillChart(chartContainer3, data, 
+            {
+                colors: ['#008080'],
+                nbOfSegments: 25
+            });
 
 
         chartInfo3.style.display = ''
@@ -1041,70 +1128,6 @@ document.addEventListener("DOMContentLoaded", () => {
         })();
     });
 
-    // Assign bar color based on category and value
-    function getSurvey4ColorClass(label, value) {
-        if (label === "Стресс") {
-            if (value <= 7) return "green";
-            if (value > 7 && value <= 9) return "brown";
-            if (value > 9 && value < 12) return "yellow";
-            if (value >= 12 && value <= 16) return "high";
-            if (value > 16) return "very-high";
-        } else if (label === "Тревога") {
-            if (value <= 3) return "green";
-            if (value > 3 && value <= 5) return "brown";
-            if (value > 5 && value < 7) return "yellow";
-            if (value >= 7 && value <= 9) return "high";
-            if (value > 9) return "very-high";
-        } else if (label === "Депрессия") {
-            if (value <= 4) return "green";
-            if (value > 4 && value <= 6) return "brown";
-            if (value > 6 && value < 10) return "yellow";
-            if (value >= 10 && value <= 13) return "high";
-            if (value > 13) return "very-high";
-        }
-        return "green"; // Default to green if no category matches
-    }
-
-    function createSurvey4Chart(data) {
-        chartContainer4.innerHTML = ""; // Clear any existing content
-
-        data.forEach((item) => {
-            // Create bar container
-            const barContainer = document.createElement("div");
-            barContainer.classList.add("bar-container-4");
-
-            // Create label
-            const label = document.createElement("div");
-            label.classList.add("bar-label-4");
-            label.textContent = item.label;
-
-            // Create bar
-            const bar = document.createElement("div");
-            bar.classList.add("bar-4");
-
-            // Create bar fill
-            const barFill = document.createElement("div");
-            const colorClass = getSurvey4ColorClass(item.label, item.value);
-            barFill.classList.add("bar-fill-4", colorClass);
-            barFill.style.width = `${(item.value / 21) * 100}%`;
-
-            // Add fill to the bar
-            bar.appendChild(barFill);
-
-            // Create value
-            const value = document.createElement("div");
-            value.classList.add("bar-value-4");
-            value.textContent = item.value;
-
-            // Append elements to the bar container
-            barContainer.appendChild(label);
-            barContainer.appendChild(bar);
-            barContainer.appendChild(value);
-
-            // Append the bar container to the chart container
-            chartContainer4.appendChild(barContainer);
-        });
-    }
 
     // Function to get the value of a specific question from the DOM
     function getSurvey4Response(questionNumber) {
@@ -1182,13 +1205,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const scores = computeSurvey4Scores();
         const data = [
-            { label: "Стресс", value: scores[0] },
-            { label: "Тревога", value: scores[1] },
-            { label: "Депрессия", value: scores[2] },
+            { label: "Стресс", score: scores[0], intervals: ["[0", "7][8", "9][10", "12][13", "16][17", "21]"] },
+            { label: "Тревога", score: scores[1], intervals: ["[0", "3][4", "5][6", "7][8", "9][10", "21]"]  },
+            { label: "Депрессия", score: scores[2], intervals: ["[0", "4][5", "6][7", "10][11", "13][14", "21]"] }
         ];
 
-        // Generate the chart
-        createSurvey4Chart(data);
+        fillChart(chartContainer4, data, 
+            {
+                colors: ['green', 'olive', 'orange', 'crimson', 'red'],
+                legend: ['норма ', 'низкий', 'умеренный', 'высокий', 'очень высокий уровень'],
+                nbOfSegments: 32
+            });
+
 
         // Show the chart container
         chartInfo4.style.display = ''
@@ -1220,46 +1248,6 @@ document.addEventListener("DOMContentLoaded", () => {
         })();
     });
     
-    function createSurvey5Chart(data) {
-        chartContainer5.innerHTML = ""; // Clear any existing content
-
-        data.forEach((item) => {
-            // Create bar container
-            const barContainer = document.createElement("div");
-            barContainer.classList.add("bar-container-5");
-
-            // Create label
-            const label = document.createElement("div");
-            label.classList.add("bar-label-5");
-            label.textContent = item.label;
-
-            // Create bar
-            const bar = document.createElement("div");
-            bar.classList.add("bar-5");
-
-            // Create bar fill
-            const barFill = document.createElement("div");
-            barFill.classList.add("bar-fill-5");
-            barFill.style.width = `${(item.value / item.maxValue) * 100}%`;
-
-            // Add fill to the bar
-            bar.appendChild(barFill);
-
-            // Create value
-            const value = document.createElement("div");
-            value.classList.add("bar-value-5");
-            value.textContent = item.value;
-
-            // Append elements to the bar container
-            barContainer.appendChild(label);
-            barContainer.appendChild(bar);
-            barContainer.appendChild(value);
-
-            // Append the bar container to the chart container
-            chartContainer5.appendChild(barContainer);
-        });
-    }
-
     function computeSurvey5Scores() {
         // Question groups for each category
         const desubjectivation = [2, 4, 6, 7, 8, 16];
@@ -1335,16 +1323,19 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         const scores = computeSurvey5Scores();
-        // Example data for Survey 5
         const data = [
-            { label: "Десубъектизация личности", value: scores[0], maxValue: 24 },
-            { label: "Дезинтеграция жизнедеятельности", value: scores[1], maxValue: 16 },
-            { label: "Смысловая дизрегуляция", value: scores[2], maxValue: 24 },
-            { label: "Общий уровень СЖК", value: scores[3], maxValue: 64 },
+            { label: "Десубъектизация личности", score: scores[0], intervals: ["[6", "24]"] },
+            { label: "Дезинтеграция жизнедеятельности", score: scores[1], intervals: ["[4", "16]"] },
+            { label: "Смысловая дизрегуляция", score: scores[2], intervals: ["[6", "24]"] },
+            { label: "Общий уровень СЖК", score: scores[3], intervals: ["[16", "64]"] },
         ];
 
-        // Generate the chart
-        createSurvey5Chart(data);
+        fillChart(chartContainer5, data, 
+            {
+                colors: ['#008080'],
+                nbOfSegments: 20
+            });
+
 
         // Show the chart container
         chartInfo5.style.display = ''

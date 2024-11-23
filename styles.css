@@ -364,6 +364,11 @@ button:active {
     display: none;
 }
 
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+}
+
 /* Explanatory text above and below the chart */
 #chart-info,
 #chart-info-2,
@@ -436,310 +441,82 @@ button:active {
     align-self: flex-start; /* Override any parent flexbox alignment */
 }
 
-#chart-container {
-    margin-top: 20px;
-    padding: 20px;
-    background: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+.chart-title {
+    font-size: 1.2em; padding-bottom: 10px; text-align: center;
 }
 
-.bar-container {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.bar-label {
-    width: 150px;
-    font-weight: bold;
-}
-
-.bar {
-    display: flex;
-    height: 20px;
-    margin-left: 10px;
-    flex-grow: 1;
-    background: #e0e0e0;
-    border-radius: 4px;
-    overflow: hidden;
-    position: relative;
-}
-
-.bar-fill {
-    height: 100%;
-    background: #2196f3;
-    transition: width 0.5s ease;
-}
-
-.bar-value {
-    margin-left: 10px;
-    font-weight: bold;
-}
-
-/* Chart container */
-#chart-container-2 {
-    margin-top: 20px;
-    padding: 20px;
-    background: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Bar container */
-.bar-container-2 {
-    display: flex;
-    flex-direction: column; /* Stack label and bar vertically */
-    align-items: flex-start;
-    margin-bottom: 15px;
-}
-
-/* Label for each bar */
-.bar-label-2 {
-    font-weight: bold;
-    margin-bottom: 5px;
-    text-align: left;
-}
-
-/* Bar row (bar + value) */
-.bar-row-2 {
-    display: flex;
-    align-items: center; /* Align bar and score vertically */
-    width: 100%;
-}
-
-/* Bar */
-.bar-2 {
-    position: relative;
-    height: 20px;
-    flex-grow: 1; /* Allow the bar to grow dynamically */
-    background: #e0e0e0;
-    border-radius: 4px;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 10px;
-}
-
-/* Center line */
-.center-line-2 {
-    position: absolute;
-    left: 50%;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background-color: black; /* Black center line */
-    z-index: 1;
-}
-
-/* Bar fill */
-.bar-fill-2 {
-    position: absolute;
-    height: 100%;
-    transition: width 0.5s ease;
-}
-
-/* Colors for bar fill */
-.bar-fill-2.low {
-    background-color: #8D6E63; /* Brown for low intensity */
-}
-
-.bar-fill-2.standard {
-    background-color: #A5D6A7; /* Light green for standard intensity */
-}
-
-.bar-fill-2.high {
-    background-color: #66BB6A; /* Medium green for high intensity */
-}
-
-/* Value displayed at the right of the bar */
-.bar-value-2 {
-    font-weight: bold;
-    margin-left: 10px;
-    white-space: nowrap; /* Prevent wrapping */
-}
-
-/* Chart container */
-#chart-container-3 {
-    margin-top: 20px;
-    padding: 20px;
-    background: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Bar container */
-.bar-container-3 {
-    display: grid;
-    grid-template-columns: 200px 1fr 50px; /* Adjusted to allocate more space for the label */
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-/* Label for each bar */
-.bar-label-3 {
-    text-align: left;
-    font-weight: bold;
-    white-space: nowrap; /* Prevents wrapping */
-    overflow: hidden;
-    text-overflow: ellipsis; /* Adds ellipsis for labels that are still too long */
-}
-
-/* Bar */
-.bar-3 {
-    position: relative;
-    height: 20px;
-    background: #e0e0e0; /* Light gray background */
-    border-radius: 4px;
-    overflow: hidden;
-}
-
-/* Bar fill */
-.bar-fill-3 {
-    height: 100%;
-    transition: width 0.5s ease, background-color 0.5s ease;
-}
-
-/* Intensity Levels */
-.bar-fill-3.low {
-    background-color: #BBDEFB; /* Light blue for low intensity */
-}
-
-.bar-fill-3.medium {
-    background-color: #64B5F6; /* Medium blue */
-}
-
-.bar-fill-3.high {
-    background-color: #1E88E5; /* Darker blue */
-}
-
-.bar-fill-3.very-high {
-    background-color: #0D47A1; /* Deep blue */
-}
-
-/* Value displayed at the end of the bar */
-.bar-value-3 {
-    text-align: right;
-    font-weight: bold;
-}
-
-/* Chart container */
-#chart-container-4 {
-    margin-top: 20px;
-    padding: 20px;
-    background: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Bar container */
-.bar-container-4 {
-    display: grid;
-    grid-template-columns: 200px 1fr 50px; /* Label, bar, and value */
-    align-items: center;
-    margin-bottom: 15px;
-}
-
-/* Label for each bar */
-.bar-label-4 {
-    text-align: left;
-    font-weight: bold;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-/* Bar */
-.bar-4 {
-    position: relative;
-    height: 20px;
-    background: #e0e0e0; /* Light gray background */
-    border-radius: 4px;
-    overflow: hidden;
-}
-
-/* Bar fill */
-.bar-fill-4 {
-    height: 100%;
-    transition: width 0.5s ease, background-color 0.5s ease;
-}
-
-/* Bar colors */
-.bar-fill-4.green {
-    background-color: #43A047; /* Green */
-}
-
-.bar-fill-4.brown {
-    background-color: #8D6E63; /* Brown */
-}
-
-.bar-fill-4.yellow {
-    background-color: #FFEB3B; /* Yellow */
-}
-
-.bar-fill-4.high {
-    background-color: #FF8A65; /* Between Yellow and Red */
-}
-
-.bar-fill-4.very-high {
-    background-color: #e53535; /* Red */
-}
-
-/* Value displayed at the end of the bar */
-.bar-value-4 {
-    text-align: right;
-    font-weight: bold;
-}
-
-.checkbox-group {
+.chart-super-container {
     display: flex;
     flex-direction: column;
 }
 
-/* Chart container */
-#chart-container-5 {
-    margin-top: 20px;
-    padding: 20px;
-    background: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+.chart-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
-/* Bar container */
-.bar-container-5 {
+.chart-row {
     display: grid;
-    grid-template-columns: 300px 1fr 50px; /* Adjusted for fully visible labels */
+    grid-template-columns: 150px auto 50px; /* Increased label column width from 100px to 150px */
     align-items: center;
-    margin-bottom: 15px;
 }
 
-/* Label for each bar */
-.bar-label-5 {
-    text-align: left;
-    font-weight: bold;
-    white-space: normal; /* Allow text to wrap */
-    overflow: visible; /* Ensure labels are fully visible */
-}
-
-/* Bar */
-.bar-5 {
-    position: relative;
-    height: 20px;
-    background: #e0e0e0; /* Light gray background */
-    border-radius: 4px;
-    overflow: hidden;
-}
-
-/* Bar fill */
-.bar-fill-5 {
-    height: 100%;
-    background-color: #1E88E5; /* Uniform blue color for all bars */
-    transition: width 0.5s ease;
-}
-
-/* Value displayed at the end of the bar */
-.bar-value-5 {
+.trait-label {
     text-align: right;
-    font-weight: bold;
+    margin-right: 10px;
+    font-size: 14px;
+    /* white-space: nowrap; */
+}
+
+.bar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    gap: 1px;
+    width: 100%;
+}
+
+.bar {
+    position: relative;
+    width: 100%;
+    height: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: #eaeaea;
+    display: flex;
+}
+
+.segment {
+    flex: 1;
+    height: 100%;
+    border-right: 1px solid #fff;
+}
+
+.segment.semi-filled {
+    background: linear-gradient(to right, #4caf50 50%, transparent 50%);
+}
+
+.score {
+    font-size: 14px;
+    text-align: center;
+}
+
+.intervals {
+    width: 100%;
+    font-size: 10px;
+}
+
+.interval-mark {
+    position: absolute;
+    text-align: center;
+    font-size: 9px;
+}
+
+.chart-legend {
+    font-size: 14px;
+    text-align: center;
+    margin-top: 20px;
 }
