@@ -689,11 +689,20 @@ document.addEventListener("DOMContentLoaded", () => {
                     }
                     else
                     {
-                        textBeforeBracket = extractIntegerBeforeBracket(interval).toString();
-                        intervalMark.innerHTML = `
+                        lastIntBeforeBracket = extractIntegerBeforeBracket(intervals[index-1]);
+                        intBeforeBracket = extractIntegerBeforeBracket(interval);
+                        
+                        textBeforeBracket = intBeforeBracket.toString();
+                        if (intBeforeBracket > (lastIntBeforeBracket + 2))
+                        {
+                            intervalMark.innerHTML = `
                             <span style="color: ${colors[index-1]};">${textBeforeBracket}]</span>
                             <span style="color: ${colors[index]};">${interval.slice(textBeforeBracket.length + 1)}</span>
                         `;
+                        }
+                        else{
+                            intervalMark.innerHTML = `<span style="color: ${colors[index]};">${interval.slice(textBeforeBracket.length + 1)}</span>`;
+                        }
                     }
                     
                     if (index === 0) {
@@ -1699,4 +1708,3 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
-
