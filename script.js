@@ -338,7 +338,7 @@ document.addEventListener("DOMContentLoaded", () => {
             ["Пол", getCheckedRadioName("userGender")],
             ["Возраст", getCheckedRadioName("userAge")],
             ["Семейное положение", getCheckedRadioName("userFamilyStatus")],
-            ["Образование", getCheckedRadioName("userEducation")],
+            ["Уровень образования", getCheckedRadioName("userEducation")],
             ["Другая сфера деятельности", getInputValueById("userOtherProfessionField")],
             ["Удовлетворённость", getCheckedRadioName("userSatisfaction")],
             ["Сталкивался с переживанием экзистенциального кризиса", getCheckedRadioName("userExistentialCrisis")],
